@@ -133,6 +133,7 @@
 		1075186316762A8A0065B49F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075186216762A8A0065B49F /* AppDelegate.m */; };
 		1075186616762A8A0065B49F /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075186516762A8A0065B49F /* HelloWorldLayer.m */; };
 		1075186916762A8A0065B49F /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075186816762A8A0065B49F /* IntroLayer.m */; };
+		1075187716762CAF0065B49F /* BoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075187616762CAF0065B49F /* BoardLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -398,6 +399,8 @@
 		1075186516762A8A0065B49F /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		1075186716762A8A0065B49F /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		1075186816762A8A0065B49F /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		1075187516762CAF0065B49F /* BoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardLayer.h; sourceTree = "<group>"; };
+		1075187616762CAF0065B49F /* BoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +459,7 @@
 		107516E916762A870065B49F /* baikin */ = {
 			isa = PBXGroup;
 			children = (
+				1075186F16762C090065B49F /* Source */,
 				1075186116762A8A0065B49F /* AppDelegate.h */,
 				1075186216762A8A0065B49F /* AppDelegate.m */,
 				1075186416762A8A0065B49F /* HelloWorldLayer.h */,
@@ -832,6 +836,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1075186F16762C090065B49F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1075187016762C090065B49F /* Game */,
+				1075187116762C090065B49F /* Menu */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		1075187016762C090065B49F /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				1075187216762C810065B49F /* Background */,
+				1075187316762C810065B49F /* BoardObj */,
+				1075187416762C810065B49F /* Etc */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		1075187116762C090065B49F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		1075187216762C810065B49F /* Background */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		1075187316762C810065B49F /* BoardObj */ = {
+			isa = PBXGroup;
+			children = (
+				1075187516762CAF0065B49F /* BoardLayer.h */,
+				1075187616762CAF0065B49F /* BoardLayer.m */,
+			);
+			path = BoardObj;
+			sourceTree = "<group>";
+		};
+		1075187416762C810065B49F /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Etc;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1009,6 +1062,7 @@
 				1075186316762A8A0065B49F /* AppDelegate.m in Sources */,
 				1075186616762A8A0065B49F /* HelloWorldLayer.m in Sources */,
 				1075186916762A8A0065B49F /* IntroLayer.m in Sources */,
+				1075187716762CAF0065B49F /* BoardLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
