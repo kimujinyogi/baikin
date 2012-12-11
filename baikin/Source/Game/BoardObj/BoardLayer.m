@@ -12,12 +12,12 @@
 
 - (void) draw
 {
-    static float oneTileWH = (318.0f - (3 * 8)) / 7.0f;
+    static const float oneTileWH = 42.0f;//(318.0f - (3 * 8)) / 7.0f;
 
-    static float boardWidth = 318.0f;
-    float marginX = 1.0f;
-    float marginY = 44.0f;
-    float intarval = 3.0f;
+    static const float boardWidth = 318.0f;
+    static const float marginX = 1.0f;
+    static const float marginY = 44.0f;
+    static const float intarval = 3.0f;
     
     ccDrawSolidRect(ccp(marginX, marginY), ccp(boardWidth + marginX, boardWidth + marginY), ccc4f(1, 1, 1, 1));
     
@@ -32,7 +32,7 @@
             y1 = (marginY + intarval) + (i * (oneTileWH + intarval));
             x2 = (marginX + intarval) + ((j + 1)  * (oneTileWH + intarval) - intarval);
             y2 = (marginY + intarval) + ((i + 1) * (oneTileWH + intarval) - intarval);
-            ccDrawSolidRect(ccp(x1, y1), ccp(x2, y2), ccc4f(1, 1, 0, 1))
+            ccDrawSolidRect(ccp(x1, y1), ccp(x2, y2), ccc4f(1, 1, 0, 1));
         }
     }
 }

@@ -7,7 +7,10 @@
 //
 
 
+// タッチ
+#import "TouchInterfaceLayer.h"
 
+// 背景のボード
 #import "BoardLayer.h"
 
 // Import the interfaces
@@ -20,6 +23,8 @@
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
+
+static HelloWorldLayer* _instance = nil;
 
 // Helper class method that creates a Scene with the HelloWorldLayer as the only child.
 +(CCScene *) scene
@@ -37,6 +42,11 @@
 	return scene;
 }
 
++ (HelloWorldLayer*) shareInstance
+{
+    return _instance;
+}
+
 // on "init" you need to initialize your instance
 -(id) init
 {
@@ -44,7 +54,17 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) )
     {
-		
+        if (_instance != nil)
+        {
+            NSLog(@"どこから？？？");
+            abort();
+        }
+        
+        _instance = self;
+        
+        TouchInterfaceLayer* touchLayer = [TouchInterfaceLayer node];
+        [self addChild: touchLayer];
+        
         BoardLayer* board = [BoardLayer node];
         
         [self addChild: board
