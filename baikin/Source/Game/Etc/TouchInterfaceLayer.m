@@ -58,16 +58,21 @@
     point.x -= 1;
     point.y -= 44;
     
-    float intervalCheckX = (int)point.x % 7;
-    float intervalCheckY = (int)point.y % 7;
+    float intervalCheckX = (int)point.x % (int)(oneTileWH + intarval);
+    float intervalCheckY = (int)point.y % (int)(oneTileWH + intarval);
     if ((intervalCheckX > 3) &&
         (intervalCheckY > 3))
     {
-        NSLog(@"ok");
+        x = point.x / (oneTileWH + intarval);
+        y = point.y / (oneTileWH + intarval);
     }
     
-    
-    NSLog(@"x = %d, h = %d", x, y);
+    if ((x >= 0) &&
+        (y >= 0))
+    {
+        NSLog(@"(%d, %d)", x + 1, y + 1);
+        NSLog(@"%d", x + (y * 7));
+    }
 }
 
 - (void) ccTouchCancelled: (UITouch*)touch

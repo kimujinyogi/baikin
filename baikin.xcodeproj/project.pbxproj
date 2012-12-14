@@ -136,6 +136,9 @@
 		1075187716762CAF0065B49F /* BoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075187616762CAF0065B49F /* BoardLayer.m */; };
 		318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */; };
 		318D1DBD1676EFDE00AAA148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */; };
+		31D786BE167AE935003ECA1D /* CharBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D786BD167AE935003ECA1D /* CharBase.m */; };
+		31D786C3167AEAF0003ECA1D /* baikin.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D786C1167AEAF0003ECA1D /* baikin.png */; };
+		31D786C4167AEAF0003ECA1D /* baikin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D786C2167AEAF0003ECA1D /* baikin-hd.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -406,6 +409,10 @@
 		318D1DB91676EDA300AAA148 /* TouchInterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInterfaceLayer.h; sourceTree = "<group>"; };
 		318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInterfaceLayer.m; sourceTree = "<group>"; };
 		318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		31D786BC167AE935003ECA1D /* CharBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharBase.h; sourceTree = "<group>"; };
+		31D786BD167AE935003ECA1D /* CharBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharBase.m; sourceTree = "<group>"; };
+		31D786C1167AEAF0003ECA1D /* baikin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baikin.png; sourceTree = "<group>"; };
+		31D786C2167AEAF0003ECA1D /* baikin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baikin-hd.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,6 +488,7 @@
 		107516EA16762A870065B49F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31D786BF167AEAEA003ECA1D /* Game */,
 				318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */,
 				107516EB16762A870065B49F /* Default.png */,
 				107516ED16762A870065B49F /* Default-Landscape~ipad.png */,
@@ -855,6 +863,7 @@
 			isa = PBXGroup;
 			children = (
 				1075187216762C810065B49F /* Background */,
+				31D786BA167AE912003ECA1D /* Character */,
 				1075187316762C810065B49F /* BoardObj */,
 				1075187416762C810065B49F /* Etc */,
 			);
@@ -891,6 +900,33 @@
 				318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */,
 			);
 			path = Etc;
+			sourceTree = "<group>";
+		};
+		31D786BA167AE912003ECA1D /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				31D786BC167AE935003ECA1D /* CharBase.h */,
+				31D786BD167AE935003ECA1D /* CharBase.m */,
+			);
+			path = Character;
+			sourceTree = "<group>";
+		};
+		31D786BF167AEAEA003ECA1D /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				31D786C0167AEAEA003ECA1D /* Character */,
+			);
+			name = Game;
+			path = Resources/Game;
+			sourceTree = "<group>";
+		};
+		31D786C0167AEAEA003ECA1D /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				31D786C1167AEAF0003ECA1D /* baikin.png */,
+				31D786C2167AEAF0003ECA1D /* baikin-hd.png */,
+			);
+			path = Character;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -957,6 +993,8 @@
 				1075170316762A870065B49F /* iTunesArtwork in Resources */,
 				1075184116762A8A0065B49F /* ChangeLog in Resources */,
 				318D1DBD1676EFDE00AAA148 /* Default-568h@2x.png in Resources */,
+				31D786C3167AEAF0003ECA1D /* baikin.png in Resources */,
+				31D786C4167AEAF0003ECA1D /* baikin-hd.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1111,7 @@
 				1075186916762A8A0065B49F /* IntroLayer.m in Sources */,
 				1075187716762CAF0065B49F /* BoardLayer.m in Sources */,
 				318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */,
+				31D786BE167AE935003ECA1D /* CharBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

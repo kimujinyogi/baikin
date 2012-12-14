@@ -10,6 +10,11 @@
 // タッチ
 #import "TouchInterfaceLayer.h"
 
+// キャラクターのレイヤー
+
+// キャラクター
+#import "CharBase.h"
+
 // 背景のボード
 #import "BoardLayer.h"
 
@@ -71,6 +76,9 @@ static HelloWorldLayer* _instance = nil;
                      z: 10
                    tag: 10];
         
+        CharBase* chara = [CharBase node];
+        [self addChild: chara
+                     z: 20];
     
         CGSize size = [[CCDirector sharedDirector] winSize];
         CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(255,0,255,255)];
@@ -78,8 +86,6 @@ static HelloWorldLayer* _instance = nil;
         colorLayer.position = ccp(0, 0);
 		
         [self addChild:colorLayer];
-
-        
 	}
     
 	return self;
