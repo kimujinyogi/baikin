@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCGLProgram.m \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCGLProgram.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccMacros.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/CCGL.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCGLView.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCESRenderer.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccGLStateCache.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/CCFileUtils.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/../ccTypes.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/uthash.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/OpenGL_Internal.h \
+  baikin/libs/kazmath/include/kazmath/GL/matrix.h \
+  baikin/libs/kazmath/include/kazmath/GL/../mat4.h \
+  baikin/libs/kazmath/include/kazmath/GL/../utility.h \
+  baikin/libs/kazmath/include/kazmath/GL/../vec3.h \
+  baikin/libs/kazmath/include/kazmath/kazmath.h \
+  baikin/libs/kazmath/include/kazmath/GL/../vec2.h \
+  baikin/libs/kazmath/include/kazmath/GL/../mat3.h \
+  baikin/libs/kazmath/include/kazmath/GL/../quaternion.h \
+  baikin/libs/kazmath/include/kazmath/GL/../plane.h \
+  baikin/libs/kazmath/include/kazmath/GL/../aabb.h \
+  baikin/libs/kazmath/include/kazmath/GL/../ray2.h
