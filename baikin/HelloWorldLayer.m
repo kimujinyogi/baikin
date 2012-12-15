@@ -11,9 +11,7 @@
 #import "TouchInterfaceLayer.h"
 
 // キャラクターのレイヤー
-
-// キャラクター
-#import "CharBase.h"
+#import "CharLayer.h"
 
 // 背景のボード
 #import "BoardLayer.h"
@@ -25,6 +23,12 @@
 #import "AppDelegate.h"
 
 #pragma mark - HelloWorldLayer
+
+@interface HelloWorldLayer ()
+
+@property (nonatomic, retain) CharLayer* charaLayer;
+
+@end
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -76,8 +80,8 @@ static HelloWorldLayer* _instance = nil;
                      z: 10
                    tag: 10];
         
-        CharBase* chara = [CharBase node];
-        [self addChild: chara
+        [self setCharaLayer: [CharLayer node]];
+        [self addChild: self.charaLayer
                      z: 20];
     
         CGSize size = [[CCDirector sharedDirector] winSize];
@@ -94,11 +98,8 @@ static HelloWorldLayer* _instance = nil;
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
+    [self setCharaLayer: nil];
+    
 	[super dealloc];
 }
 

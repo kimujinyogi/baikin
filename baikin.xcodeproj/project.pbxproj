@@ -134,6 +134,7 @@
 		1075186616762A8A0065B49F /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075186516762A8A0065B49F /* HelloWorldLayer.m */; };
 		1075186916762A8A0065B49F /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075186816762A8A0065B49F /* IntroLayer.m */; };
 		1075187716762CAF0065B49F /* BoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075187616762CAF0065B49F /* BoardLayer.m */; };
+		312E4D96167C30C300748323 /* CharLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E4D95167C30C300748323 /* CharLayer.m */; };
 		318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */; };
 		318D1DBD1676EFDE00AAA148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */; };
 		31D786BE167AE935003ECA1D /* CharBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D786BD167AE935003ECA1D /* CharBase.m */; };
@@ -406,6 +407,8 @@
 		1075186816762A8A0065B49F /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
 		1075187516762CAF0065B49F /* BoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardLayer.h; sourceTree = "<group>"; };
 		1075187616762CAF0065B49F /* BoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardLayer.m; sourceTree = "<group>"; };
+		312E4D94167C30C300748323 /* CharLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharLayer.h; sourceTree = "<group>"; };
+		312E4D95167C30C300748323 /* CharLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharLayer.m; sourceTree = "<group>"; };
 		318D1DB91676EDA300AAA148 /* TouchInterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInterfaceLayer.h; sourceTree = "<group>"; };
 		318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInterfaceLayer.m; sourceTree = "<group>"; };
 		318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -907,6 +910,8 @@
 			children = (
 				31D786BC167AE935003ECA1D /* CharBase.h */,
 				31D786BD167AE935003ECA1D /* CharBase.m */,
+				312E4D94167C30C300748323 /* CharLayer.h */,
+				312E4D95167C30C300748323 /* CharLayer.m */,
 			);
 			path = Character;
 			sourceTree = "<group>";
@@ -1112,6 +1117,7 @@
 				1075187716762CAF0065B49F /* BoardLayer.m in Sources */,
 				318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */,
 				31D786BE167AE935003ECA1D /* CharBase.m in Sources */,
+				312E4D96167C30C300748323 /* CharLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1173,6 +1179,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1191,6 +1198,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
