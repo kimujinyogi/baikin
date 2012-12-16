@@ -10,6 +10,12 @@
 
 @interface CharLayer : CCLayer
 
+- (void) setStartCharaSetRedPositions: (CGPoint*)redP
+                        BluePositions: (CGPoint*)blueP
+                                Count: (int)count;
+
+- (BOOL) touchedIndex: (int)index;
+
 @end
 
 

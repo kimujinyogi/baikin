@@ -6,6 +6,13 @@
 //
 //
 
+#import "HelloWorldLayer.h"
+
+// キャラクターのレイヤー
+#import "CharLayer.h"
+
+#import "TileFunctions.h"
+
 #import "TouchInterfaceLayer.h"
 
 @implementation TouchInterfaceLayer
@@ -39,14 +46,12 @@
 - (void) ccTouchEnded: (UITouch*)touch
             withEvent: (UIEvent*)event
 {
-    static const float oneTileWH = 42.0f; //(318.0f - (3 * 8)) / 7.0f;
     static const float intarval = 3.0f;
+    
     CGPoint point = [touch locationInView: [touch view]];
     point = [[CCDirector sharedDirector] convertToGL: point];
     
     // ここで、どのマスが選択されたか取得する
-    int x = -1;
-    int y = -1;
     
     // まずボックスの中か？
     if (CGRectContainsPoint(CGRectMake(1, 44, 318 - intarval, 318 - intarval), point) == NO)
@@ -54,25 +59,10 @@
         return;
     }
     
-    // 左と下のmarginを引く
-    point.x -= 1;
-    point.y -= 44;
+    int index = getIndexPosition(point);
     
-    float intervalCheckX = (int)point.x % (int)(oneTileWH + intarval);
-    float intervalCheckY = (int)point.y % (int)(oneTileWH + intarval);
-    if ((intervalCheckX > 3) &&
-        (intervalCheckY > 3))
-    {
-        x = point.x / (oneTileWH + intarval);
-        y = point.y / (oneTileWH + intarval);
-    }
-    
-    if ((x >= 0) &&
-        (y >= 0))
-    {
-        NSLog(@"(%d, %d)", x + 1, y + 1);
-        NSLog(@"%d", x + (y * 7));
-    }
+    HelloWorldLayer* layer = [HelloWorldLayer shareInstance];
+    [[layer charaLayer] touchedIndex: index];
 }
 
 - (void) ccTouchCancelled: (UITouch*)touch

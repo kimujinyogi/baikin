@@ -7,6 +7,9 @@
 //
 
 
+// タイル計算メソッド
+#import "TileFunctions.h"
+
 // キャラクター
 #import "CharBase.h"
 
@@ -40,8 +43,7 @@
                          z: 10];
             x = i % 7;
             y = i / 7;
-            [chara setPosition: ccp(1 + 3 + ((3 + 42) * x) + 42 / 2,
-                                    44.0f + 3 + ((3 + 42) * y) + 42 / 2)];
+            [chara setPosition: getCenterXAndY(x, y)];
         }
         [self setBaikinList: [NSArray arrayWithArray: ar]];
     }
@@ -55,6 +57,51 @@
     [self setBaikinList: nil];
     
     [super dealloc];
+}
+
+- (void) setStartCharaSetRedPositions: (CGPoint*)redP
+                        BluePositions: (CGPoint*)blueP
+                                Count: (int)count
+{
+    for (CharBase* obj in self.baikinList)
+    {
+        [obj setPosition: ccp(-100, -100)];
+        [obj setDead];
+    }
+    
+    for (int i = 0; i < count; i++)
+    {
+        if ((i + 1) < [self.baikinList count])
+        {
+            CharBase* obj = [self.baikinList objectAtIndex: i * 2];
+            [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
+            [obj setBlueBaikin];
+            [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
+            obj = [self.baikinList objectAtIndex: i * 2 + 1];
+            [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
+            [obj setRedBaikin];
+            [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
+        }
+    }
+}
+
+- (BOOL) touchedIndex: (int)index
+{
+    BOOL returnValue = NO;
+    
+    for (CharBase* obj in self.baikinList)
+    {
+        if ([obj status] == kCharaStatus_Ready)
+        {
+            if (obj.index == index)
+            {
+                returnValue = YES;
+                break;
+            }
+        }
+    }
+    
+    return returnValue;
 }
 
 @end

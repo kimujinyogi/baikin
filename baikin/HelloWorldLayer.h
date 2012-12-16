@@ -9,13 +9,14 @@
 
 #import <GameKit/GameKit.h>
 
-// When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 
-// HelloWorldLayer
+@class CharLayer;
 @interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
 {
 }
+
+@property (nonatomic, retain) CharLayer* charaLayer;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 + (CCScene*) scene;

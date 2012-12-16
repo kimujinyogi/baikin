@@ -26,7 +26,7 @@
 
 @interface HelloWorldLayer ()
 
-@property (nonatomic, retain) CharLayer* charaLayer;
+
 
 @end
 
@@ -83,6 +83,18 @@ static HelloWorldLayer* _instance = nil;
         [self setCharaLayer: [CharLayer node]];
         [self addChild: self.charaLayer
                      z: 20];
+        
+        CGPoint red[2];
+        CGPoint blue[2];
+        red[0] = ccp(0, 0);
+        red[1] = ccp(6, 6);
+        
+        blue[0] = ccp(6, 0);
+        blue[1] = ccp(0, 6);
+        
+        [self.charaLayer setStartCharaSetRedPositions: red
+                                        BluePositions: blue
+                                                Count: 2];
     
         CGSize size = [[CCDirector sharedDirector] winSize];
         CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(255,0,255,255)];
