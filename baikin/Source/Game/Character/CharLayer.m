@@ -25,6 +25,9 @@
 
 @property (nonatomic, retain) NSArray* baikinList;
 
+// 選択中のキャラを待機状態にする
+- (void) setReadyCurrentSelectedObj;
+
 // 待機中のキャラを返す
 - (CharBase*) getReadyObj;
 
@@ -34,6 +37,10 @@
 // キャラを移動させる
 - (void) setMoveCharaWithXY: (CGPoint)point
                         Obj: (CharBase*)obj;
+
+// 周りのキャラを自分と同じにする
+- (void) setSurroundingObjToDye: (CGPoint)point
+                           Blue: (BOOL)isBlue;
 
 @end
 
@@ -109,63 +116,65 @@
         // 同じマスなら
         if (selectedCharP_.index == index)
         {
-            // キャラの状態を戻す
-            [selectedCharP_ setStatusReady];
-            // 同じ物なのでキャンセル
-            selectedCharP_ = nil;
+            // 選択中のキャラを待機状態にする
+            [self setReadyCurrentSelectedObj];
         }
         // 違うマスなら
         else
         {
-            // 自分とタッチ座標のマスを求める
-            CGPoint my = getXAndYFromIndex(selectedCharP_.index);
-            CGPoint other = getXAndYFromIndex(index);
-
-            // 距離を求める
-            int difX = fabs(my.x - other.x);
-            int difY = fabs(my.y - other.y);
-            
-            // 範囲内か？
-            if ((difX < 3) &&
-                (difY < 3))
+            // 違うマスに既に他のオブジェクトがいるか？
+            CharBase* otherObj = [self getReadyCharWithIndex: index];
+            if (otherObj != nil)
             {
-                // 1マス離れているindexか？
-                if ((difX < 2) &&
-                    (difY < 2))
-                {
-                    [self setCopyCharaWithXY: other
-                                        Blue: selectedCharP_.isBlue];
-                }
-                // 2マス離れているindexか？
-                else
-                {
-                    [self setMoveCharaWithXY: other
-                                         Obj: selectedCharP_];
-                }
+                // キャラの状態を戻す
+                [selectedCharP_ setStatusReady];
+                // そのキャラクターを選択する
+                selectedCharP_ = otherObj;
+                [selectedCharP_ setStatusSelect];
             }
-            
-            // キャラの状態を戻す
-            [selectedCharP_ setStatusReady];
-            // 範囲外なのでキャンセル
-            selectedCharP_ = nil;
+            else
+            {
+                // 自分とタッチ座標のマスを求める
+                CGPoint my = getXAndYFromIndex(selectedCharP_.index);
+                CGPoint other = getXAndYFromIndex(index);
+                
+                // 距離を求める
+                int difX = fabs(my.x - other.x);
+                int difY = fabs(my.y - other.y);
+                
+                // 範囲内か？
+                if ((difX < 3) &&
+                    (difY < 3))
+                {
+                    // 1マス離れているindexか？
+                    if ((difX < 2) &&
+                        (difY < 2))
+                    {
+                        [self setCopyCharaWithXY: other
+                                            Blue: selectedCharP_.isBlue];
+                    }
+                    // 2マス離れているindexか？
+                    else
+                    {
+                        [self setMoveCharaWithXY: other
+                                             Obj: selectedCharP_];
+                    }
+                }
+                
+                // 選択中のキャラを待機状態にする
+                [self setReadyCurrentSelectedObj];
+            }
         }
         returnValue = YES;
     }
     // 選択されている物がない
     else
     {
-        for (CharBase* obj in self.baikinList)
+        selectedCharP_ = [self getReadyCharWithIndex: index];
+        if (selectedCharP_ != nil)
         {
-            if ([obj status] == kCharaStatus_Ready)
-            {
-                if (obj.index == index)
-                {
-                    selectedCharP_ = obj;
-                    [selectedCharP_ setStatusSelect];
-                    returnValue = YES;
-                    break;
-                }
-            }
+            [selectedCharP_ setStatusSelect];
+            returnValue = YES;
         }
     }
     
@@ -173,6 +182,14 @@
 }
 
 
+// 選択中のキャラを待機状態にする
+- (void) setReadyCurrentSelectedObj
+{
+    // キャラの状態を戻す
+    [selectedCharP_ setStatusReady];
+    // 範囲外なのでキャンセル
+    selectedCharP_ = nil;
+}
 
 // 待機中のキャラを返す
 - (CharBase*) getReadyObj
@@ -201,6 +218,25 @@
     return returnValue;
 }
 
+// indexで表示されているキャラを返す
+- (CharBase*) getReadyCharWithIndex: (int)index
+{
+    CharBase* returnValue = nil;
+    for (CharBase* obj in self.baikinList)
+    {
+        if ([obj status] == kCharaStatus_Ready)
+        {
+            if (obj.index == index)
+            {
+                returnValue = obj;
+                break;
+            }
+        }
+    }
+    
+    return returnValue;
+}
+
 // キャラをコピーする
 - (void) setCopyCharaWithXY: (CGPoint)point
                        Blue: (BOOL)isBlue
@@ -216,6 +252,8 @@
     {
         [obj setRedBaikin];
     }
+    [self setSurroundingObjToDye: point
+                            Blue: obj.isBlue];
 }
 
 // キャラを移動させる
@@ -224,8 +262,51 @@
 {
     [obj setIndex: getIndexXAndY(point.x, point.y)];
     [obj setPosition: getCenterXAndY(point.x, point.y)];
+    [self setSurroundingObjToDye: point
+                            Blue: obj.isBlue];
 }
 
+// 周りのキャラを自分と同じにする
+- (void) setSurroundingObjToDye: (CGPoint)point
+                           Blue: (BOOL)isBlue
+{
+    int index = -1;
+    CharBase* otherObj = nil;
+    int posX, posY;
+    // 周りの８マスのキャラを検索
+    for (int x = -1; x < 2; x++)
+    {
+        for (int y = -1; y < 2; y++)
+        {
+            // 自分
+            if ((y == 0) &&
+                (x == 0))
+                continue;
+            
+            posX = point.x + x;
+            posY = point.y + y;
+            if ((posX < 0) ||
+                (posX > 6) ||
+                (posY < 0) ||
+                (posY > 6))
+                continue;
+            
+            index = getIndexXAndY(posX, posY);
+            otherObj = [self getReadyCharWithIndex: index];
+            if (otherObj.isBlue != isBlue)
+            {
+                if (isBlue == YES)
+                {
+                    [otherObj setBlueBaikin];
+                }
+                else
+                {
+                    [otherObj setRedBaikin];
+                }
+            }
+        }
+    }
+}
 
 
 @end
