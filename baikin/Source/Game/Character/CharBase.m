@@ -11,6 +11,7 @@
 @interface CharBase ()
 {
     enum kCharaStatus status_;
+    BOOL isBlue_;
 }
 
 @property (nonatomic, retain) CCSprite* sprite;
@@ -20,7 +21,8 @@
 @implementation CharBase
 
 @synthesize
-status = status_;
+status = status_,
+isBlue = isBlue_;
 
 - (id) init
 {
@@ -55,14 +57,27 @@ status = status_;
 {
     CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage: @"baikinred.png"];
     [self.sprite setTexture: texture];
-    [self.sprite setOpacity: 255];
-    status_ = kCharaStatus_Ready;
+    isBlue_ = NO;
+    [self setStatusReady];
 }
 
 - (void) setBlueBaikin
 {
     CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage: @"baikin.png"];
     [self.sprite setTexture: texture];
+    isBlue_ = YES;
+    [self setStatusReady];
+}
+
+- (void) setStatusSelect
+{
+    [self.sprite setColor: ccc3(50, 50, 50)];
+    status_ = kCharaStatus_Selected;
+}
+
+- (void) setStatusReady
+{
+    [self.sprite setColor: ccc3(255, 255, 255)];
     [self.sprite setOpacity: 255];
     status_ = kCharaStatus_Ready;
 }

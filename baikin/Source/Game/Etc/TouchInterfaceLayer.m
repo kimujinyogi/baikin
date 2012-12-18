@@ -59,10 +59,18 @@
         return;
     }
     
+
+    BOOL isCharacterAction = NO;
     int index = getIndexPosition(point);
-    
     HelloWorldLayer* layer = [HelloWorldLayer shareInstance];
-    [[layer charaLayer] touchedIndex: index];
+
+    if (index >= 0)
+        isCharacterAction = [[layer charaLayer] touchedIndex: index];
+    
+    if (isCharacterAction == NO)
+    {
+        NSLog(@"キャラが無い");
+    }
 }
 
 - (void) ccTouchCancelled: (UITouch*)touch

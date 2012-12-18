@@ -24,6 +24,11 @@ CGPoint getCenterXAndY(int x, int y)
 }
 
 
+CGPoint getXAndYFromIndex(int index)
+{
+    return CGPointMake(index % 7, index / 7);
+}
+
 
 int getIndexXAndY(int x, int y)
 {
@@ -55,11 +60,10 @@ int getIndexPosition(CGPoint point)
     if ((x >= 0) &&
         (y >= 0))
     {
-        NSLog(@"(%d, %d)", x + 1, y + 1);
-        NSLog(@"%d", x + (y * 7));
+        return getIndexXAndY(x, y);
     }
     
-    return getIndexXAndY(x, y);
+    return -1;
 }
 
 

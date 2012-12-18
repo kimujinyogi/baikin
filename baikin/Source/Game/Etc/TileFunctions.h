@@ -12,6 +12,9 @@
 // x何番目、y何番目のマスかを渡して、その増すの中心座標を返してもらう
 extern CGPoint getCenterXAndY(int x, int y);
 
+// indexからx何番目、y何番目か返してもらう
+extern CGPoint getXAndYFromIndex(int index);
+
 // x何番目、y何番目のマスかを渡して、indexを渡してもらう
 // * * * * * * *
 // 7 8 9 * * * *

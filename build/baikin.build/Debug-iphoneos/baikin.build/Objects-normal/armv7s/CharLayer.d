@@ -1,5 +1,6 @@
 dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharLayer.m \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Etc/TileFunctions.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharBase.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/cocos2d.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \

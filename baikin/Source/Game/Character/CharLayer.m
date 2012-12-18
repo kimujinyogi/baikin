@@ -18,8 +18,22 @@
 
 
 @interface CharLayer ()
+{
+@private
+    CharBase* selectedCharP_;         // 選択されたキャラクター
+}
 
 @property (nonatomic, retain) NSArray* baikinList;
+
+// 待機中のキャラを返す
+- (CharBase*) getReadyObj;
+
+// キャラをコピーさせる
+- (void) setCopyCharaWithXY: (CGPoint)point
+                       Blue: (BOOL)isBlue;
+// キャラを移動させる
+- (void) setMoveCharaWithXY: (CGPoint)point
+                        Obj: (CharBase*)obj;
 
 @end
 
@@ -89,20 +103,130 @@
 {
     BOOL returnValue = NO;
     
-    for (CharBase* obj in self.baikinList)
+    // 既に選択されている物がある
+    if (selectedCharP_ != nil)
     {
-        if ([obj status] == kCharaStatus_Ready)
+        // 同じマスなら
+        if (selectedCharP_.index == index)
         {
-            if (obj.index == index)
+            // キャラの状態を戻す
+            [selectedCharP_ setStatusReady];
+            // 同じ物なのでキャンセル
+            selectedCharP_ = nil;
+        }
+        // 違うマスなら
+        else
+        {
+            // 自分とタッチ座標のマスを求める
+            CGPoint my = getXAndYFromIndex(selectedCharP_.index);
+            CGPoint other = getXAndYFromIndex(index);
+
+            // 距離を求める
+            int difX = fabs(my.x - other.x);
+            int difY = fabs(my.y - other.y);
+            
+            // 範囲内か？
+            if ((difX < 3) &&
+                (difY < 3))
             {
-                returnValue = YES;
-                break;
+                // 1マス離れているindexか？
+                if ((difX < 2) &&
+                    (difY < 2))
+                {
+                    [self setCopyCharaWithXY: other
+                                        Blue: selectedCharP_.isBlue];
+                }
+                // 2マス離れているindexか？
+                else
+                {
+                    [self setMoveCharaWithXY: other
+                                         Obj: selectedCharP_];
+                }
+            }
+            
+            // キャラの状態を戻す
+            [selectedCharP_ setStatusReady];
+            // 範囲外なのでキャンセル
+            selectedCharP_ = nil;
+        }
+        returnValue = YES;
+    }
+    // 選択されている物がない
+    else
+    {
+        for (CharBase* obj in self.baikinList)
+        {
+            if ([obj status] == kCharaStatus_Ready)
+            {
+                if (obj.index == index)
+                {
+                    selectedCharP_ = obj;
+                    [selectedCharP_ setStatusSelect];
+                    returnValue = YES;
+                    break;
+                }
             }
         }
     }
     
     return returnValue;
 }
+
+
+
+// 待機中のキャラを返す
+- (CharBase*) getReadyObj
+{
+    CharBase* returnValue = nil;
+    for (CharBase* obj in self.baikinList)
+    {
+        if (obj.status == kCharaStatus_Dead)
+        {
+            returnValue = obj;
+            break;
+        }
+    }
+    
+    // 無い場合(ないはずがない)
+    if (returnValue == nil)
+    {
+        NSMutableArray* ar = [NSMutableArray arrayWithCapacity: [self.baikinList count] + 1];
+        returnValue = [CharBase node];
+        [ar addObject: returnValue];
+        [self addChild: returnValue
+                     z: 10];
+        [self setBaikinList: [NSArray arrayWithArray: ar]];
+    }
+    
+    return returnValue;
+}
+
+// キャラをコピーする
+- (void) setCopyCharaWithXY: (CGPoint)point
+                       Blue: (BOOL)isBlue
+{
+    CharBase* obj = [self getReadyObj];
+    [obj setIndex: getIndexXAndY(point.x, point.y)];
+    [obj setPosition: getCenterXAndY(point.x, point.y)];
+    if (isBlue == YES)
+    {
+        [obj setBlueBaikin];
+    }
+    else
+    {
+        [obj setRedBaikin];
+    }
+}
+
+// キャラを移動させる
+- (void) setMoveCharaWithXY: (CGPoint)point
+                        Obj: (CharBase*)obj
+{
+    [obj setIndex: getIndexXAndY(point.x, point.y)];
+    [obj setPosition: getCenterXAndY(point.x, point.y)];
+}
+
+
 
 @end
 
