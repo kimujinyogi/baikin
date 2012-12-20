@@ -143,6 +143,7 @@
 		31D786BE167AE935003ECA1D /* CharBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D786BD167AE935003ECA1D /* CharBase.m */; };
 		31D786C3167AEAF0003ECA1D /* baikin.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D786C1167AEAF0003ECA1D /* baikin.png */; };
 		31D786C4167AEAF0003ECA1D /* baikin-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D786C2167AEAF0003ECA1D /* baikin-hd.png */; };
+		31EEDA691682CD8000F2ABB8 /* MenuLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EEDA681682CD8000F2ABB8 /* MenuLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -423,6 +424,8 @@
 		31D786BD167AE935003ECA1D /* CharBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharBase.m; sourceTree = "<group>"; };
 		31D786C1167AEAF0003ECA1D /* baikin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baikin.png; sourceTree = "<group>"; };
 		31D786C2167AEAF0003ECA1D /* baikin-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baikin-hd.png"; sourceTree = "<group>"; };
+		31EEDA671682CD8000F2ABB8 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		31EEDA681682CD8000F2ABB8 /* MenuLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -897,6 +900,8 @@
 		1075187316762C810065B49F /* BoardObj */ = {
 			isa = PBXGroup;
 			children = (
+				31EEDA671682CD8000F2ABB8 /* MenuLayer.h */,
+				31EEDA681682CD8000F2ABB8 /* MenuLayer.m */,
 				1075187516762CAF0065B49F /* BoardLayer.h */,
 				1075187616762CAF0065B49F /* BoardLayer.m */,
 			);
@@ -1132,6 +1137,7 @@
 				31D786BE167AE935003ECA1D /* CharBase.m in Sources */,
 				312E4D96167C30C300748323 /* CharLayer.m in Sources */,
 				10AC4406167DDBD7004F55B5 /* TileFunctions.m in Sources */,
+				31EEDA691682CD8000F2ABB8 /* MenuLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

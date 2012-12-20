@@ -14,6 +14,7 @@
 #import "CharLayer.h"
 
 // 背景のボード
+#import "MenuLayer.h"
 #import "BoardLayer.h"
 
 // Import the interfaces
@@ -25,13 +26,20 @@
 #pragma mark - HelloWorldLayer
 
 @interface HelloWorldLayer ()
-
+{
+    CharLayer* charaLayer_;
+    MenuLayer* menuLayer_;
+}
 
 
 @end
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
+
+@synthesize
+charaLayer = charaLayer_,
+menuLayer = menuLayer_;
 
 static HelloWorldLayer* _instance = nil;
 
@@ -80,9 +88,13 @@ static HelloWorldLayer* _instance = nil;
                      z: 10
                    tag: 10];
         
-        [self setCharaLayer: [CharLayer node]];
-        [self addChild: self.charaLayer
+        charaLayer_ = [[CharLayer node] retain];
+        [self addChild: charaLayer_
                      z: 20];
+        
+        menuLayer_ = [[MenuLayer node] retain];
+        [self addChild: menuLayer_
+                     z: 30];
         
         CGPoint red[2];
         CGPoint blue[2];
@@ -92,9 +104,9 @@ static HelloWorldLayer* _instance = nil;
         blue[0] = ccp(6, 0);
         blue[1] = ccp(0, 6);
         
-        [self.charaLayer setStartCharaSetRedPositions: red
-                                        BluePositions: blue
-                                                Count: 2];
+        [charaLayer_ setStartCharaSetRedPositions: red
+                                    BluePositions: blue
+                                            Count: 2];
     
         CGSize size = [[CCDirector sharedDirector] winSize];
         CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(255,0,255,255)];
@@ -110,7 +122,8 @@ static HelloWorldLayer* _instance = nil;
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-    [self setCharaLayer: nil];
+    [charaLayer_ release];
+    [menuLayer_ release];
     
 	[super dealloc];
 }
