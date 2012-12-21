@@ -98,6 +98,7 @@ dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/CCProfiling.h \
   baikin/libs/kazmath/include/kazmath/GL/matrix.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharLayer.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/BoardObj/MenuLayer.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/BoardObj/BoardLayer.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/HelloWorldLayer.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/AppDelegate.h

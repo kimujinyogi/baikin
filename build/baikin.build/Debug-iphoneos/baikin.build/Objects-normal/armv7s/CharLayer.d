@@ -1,26 +1,21 @@
 dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharLayer.m \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Etc/TileFunctions.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharBase.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/cocos2d.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionManager.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCAction.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccTypes.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/BoardObj/MenuLayer.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCLayer.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccMacros.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCTouchDelegateProtocol.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCProtocols.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccTypes.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/CCGL.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCGLView.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCESRenderer.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/ccCArray.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/uthash.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionInstant.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionInterval.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCNode.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCProtocols.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCTexture2D.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/CCNS.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCNode.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccGLStateCache.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/CCArray.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/ccCArray.h \
   baikin/libs/kazmath/include/kazmath/kazmath.h \
   baikin/libs/kazmath/include/kazmath/vec2.h \
   baikin/libs/kazmath/include/kazmath/vec3.h \
@@ -31,6 +26,13 @@ dependencies: \
   baikin/libs/kazmath/include/kazmath/plane.h \
   baikin/libs/kazmath/include/kazmath/aabb.h \
   baikin/libs/kazmath/include/kazmath/ray2.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/HelloWorldLayer.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/cocos2d.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionManager.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCAction.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/uthash.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionInstant.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionInterval.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionEase.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionCamera.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionTween.h \
@@ -71,8 +73,6 @@ dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCTMXObjectGroup.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCTileMapAtlas.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/TGAlib.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCLayer.h \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Platforms/iOS/CCTouchDelegateProtocol.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCMenu.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCMenuItem.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCDrawingPrimitives.h \
@@ -98,4 +98,6 @@ dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/TransformUtils.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/Support/CCProfiling.h \
   baikin/libs/kazmath/include/kazmath/GL/matrix.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Etc/TileFunctions.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharBase.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/Character/CharLayer.h

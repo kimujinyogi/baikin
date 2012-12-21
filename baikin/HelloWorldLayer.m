@@ -96,20 +96,20 @@ static HelloWorldLayer* _instance = nil;
         [self addChild: menuLayer_
                      z: 30];
         
-        CGPoint red[2];
         CGPoint blue[2];
-        red[0] = ccp(0, 0);
-        red[1] = ccp(6, 6);
+        CGPoint red[2];
+        blue[0] = ccp(0, 0);
+        blue[1] = ccp(6, 6);
         
-        blue[0] = ccp(6, 0);
-        blue[1] = ccp(0, 6);
+        red[0] = ccp(6, 0);
+        red[1] = ccp(0, 6);
         
         [charaLayer_ setStartCharaSetRedPositions: red
                                     BluePositions: blue
                                             Count: 2];
     
         CGSize size = [[CCDirector sharedDirector] winSize];
-        CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(255,0,255,255)];
+        CCLayerColor* colorLayer = [CCLayerColor layerWithColor:ccc4(200,200,200,255)];
         colorLayer.contentSize = size;
         colorLayer.position = ccp(0, 0);
 		

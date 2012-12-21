@@ -72,19 +72,31 @@
 // ターンをセット
 - (void) setTurnWithIsBlue: (BOOL)isBlue
 {
-    
+    [[self turnLabel] setString: (isBlue == YES) ? @"Blue\nTurn" : @"Red\nTurn"];
+    if (isBlue)
+        [[self turnLabel] setColor: ccc3(100, 100, 255)];
+    else
+        [[self turnLabel] setColor: ccc3(255, 100, 100)];
 }
 
 
 // 何個を持っているかをセット
+- (void) setCount: (int)count
+            Label: (CCLabelTTF*)label
+{
+    [label setString: [NSString stringWithFormat: @"%d", count]];
+}
+
 - (void) setBlueCount: (int)count
 {
-    
+    [self setCount: count
+             Label: [self blueCountLabel]];
 }
 
 - (void) setRedCount: (int)count
 {
-    
+    [self setCount: count
+             Label: [self redCountLabel]];
 }
 
 @end

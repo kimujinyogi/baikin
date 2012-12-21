@@ -7,6 +7,9 @@
 //
 
 
+#import "MenuLayer.h"
+#import "HelloWorldLayer.h"
+
 // タイル計算メソッド
 #import "TileFunctions.h"
 
@@ -21,6 +24,7 @@
 {
 @private
     CharBase* selectedCharP_;         // 選択されたキャラクター
+    BOOL isBlueTurn_;
 }
 
 @property (nonatomic, retain) NSArray* baikinList;
@@ -42,6 +46,15 @@
 - (void) setSurroundingObjToDye: (CGPoint)point
                            Blue: (BOOL)isBlue;
 
+// キャラクターのターンであるかを調べる
+- (BOOL) checkTurnWithObj: (CharBase*)obj;
+
+// ターンを変更
+- (void) changeTurn;
+
+// 現在のターンの人が移動出来るマスがあるかをチェック
+- (BOOL) checkCanMoveTile;
+
 @end
 
 
@@ -52,6 +65,7 @@
 {
     if ((self = [super init]))
     {
+        isBlueTurn_ = YES;
         // キャラクターは最大数を先に生成して置く。
         CharBase* chara = nil;
         int x, y;
@@ -96,11 +110,11 @@
         {
             CharBase* obj = [self.baikinList objectAtIndex: i * 2];
             [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
-            [obj setBlueBaikin];
+            [obj setRedBaikin];
             [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
             obj = [self.baikinList objectAtIndex: i * 2 + 1];
             [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
-            [obj setRedBaikin];
+            [obj setBlueBaikin];
             [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
         }
     }
@@ -126,11 +140,19 @@
             CharBase* otherObj = [self getReadyCharWithIndex: index];
             if (otherObj != nil)
             {
-                // キャラの状態を戻す
-                [selectedCharP_ setStatusReady];
-                // そのキャラクターを選択する
-                selectedCharP_ = otherObj;
-                [selectedCharP_ setStatusSelect];
+                if ([self checkTurnWithObj: otherObj] == YES)
+                {
+                    // キャラの状態を戻す
+                    [selectedCharP_ setStatusReady];
+                    // そのキャラクターを選択する
+                    selectedCharP_ = otherObj;
+                    [selectedCharP_ setStatusSelect];
+                }
+                else
+                {
+                    // 選択中のキャラを待機状態にする
+                    [self setReadyCurrentSelectedObj];
+                }
             }
             else
             {
@@ -159,6 +181,7 @@
                         [self setMoveCharaWithXY: other
                                              Obj: selectedCharP_];
                     }
+                    [self changeTurn];
                 }
                 
                 // 選択中のキャラを待機状態にする
@@ -173,8 +196,15 @@
         selectedCharP_ = [self getReadyCharWithIndex: index];
         if (selectedCharP_ != nil)
         {
-            [selectedCharP_ setStatusSelect];
-            returnValue = YES;
+            if ([self checkTurnWithObj: selectedCharP_] == YES)
+            {
+                [selectedCharP_ setStatusSelect];
+                returnValue = YES;
+            }
+            else
+            {
+                selectedCharP_ = nil;
+            }
         }
     }
     
@@ -308,6 +338,42 @@
     }
 }
 
+
+// キャラクターのターンであるかを調べる
+- (BOOL) checkTurnWithObj: (CharBase*)obj
+{
+    return (obj.isBlue == isBlueTurn_);
+}
+
+
+// ターンを変更
+- (void) changeTurn
+{
+    isBlueTurn_ = !isBlueTurn_;
+    
+    // 表示
+    HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+    [hello.menuLayer setTurnWithIsBlue: isBlueTurn_];
+}
+
+// 現在のターンの人が移動出来るマスがあるかをチェック
+- (BOOL) checkCanMoveTile
+{
+    BOOL returnValue = NO;
+    for (CharBase* obj in self.baikinList)
+    {
+        // 現在ターンのキャラクター
+        if (obj.isBlue == isBlueTurn_)
+        {
+            // このキャラクターが移動出来るtileがあるかをチェックする
+            // あったら、
+            if (0)
+                returnValue = YES;
+        }
+    }
+    
+    return returnValue;
+}
 
 @end
 
