@@ -61,6 +61,7 @@
 // 現在のblue,redカウントを表示
 - (void) showCharCount;
 
+
 @end
 
 
@@ -361,6 +362,11 @@
 {
     isBlueTurn_ = !isBlueTurn_;
     
+    // 順番が来たキャラクターが送る場所があるのか確認する
+    // 戻す
+    if ([self checkCanMoveTile] == NO)
+        isBlueTurn_ = !isBlueTurn_;
+    
     // 表示
     [self showWhosTurn];
     [self showCharCount];
@@ -372,13 +378,22 @@
     BOOL returnValue = NO;
     for (CharBase* obj in self.baikinList)
     {
-        // 現在ターンのキャラクター
-        if (obj.isBlue == isBlueTurn_)
+        if (obj.status == kCharaStatus_Dead)
         {
-            // このキャラクターが移動出来るtileがあるかをチェックする
-            // あったら、
-            if (0)
-                returnValue = YES;
+            // 現在ターンのキャラクター
+            if (obj.isBlue == isBlueTurn_)
+            {
+                // このキャラクターが移動出来るtileがあるかをチェックする
+                // あったら、
+                for (CharBase* obj in self.baikinList)
+                {
+                    if (obj.status == kCharaStatus_Dead)
+                    {
+                        if (0)
+                            returnValue = YES;
+                    }
+                }
+            }
         }
     }
     
