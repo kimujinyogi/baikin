@@ -55,6 +55,12 @@
 // 現在のターンの人が移動出来るマスがあるかをチェック
 - (BOOL) checkCanMoveTile;
 
+// 現在のターンを表示
+- (void) showWhosTurn;
+
+// 現在のblue,redカウントを表示
+- (void) showCharCount;
+
 @end
 
 
@@ -118,6 +124,10 @@
             [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
         }
     }
+    
+    // 表示
+    [self showWhosTurn];
+    [self showCharCount];
 }
 
 - (BOOL) touchedIndex: (int)index
@@ -352,8 +362,8 @@
     isBlueTurn_ = !isBlueTurn_;
     
     // 表示
-    HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
-    [hello.menuLayer setTurnWithIsBlue: isBlueTurn_];
+    [self showWhosTurn];
+    [self showCharCount];
 }
 
 // 現在のターンの人が移動出来るマスがあるかをチェック
@@ -373,6 +383,36 @@
     }
     
     return returnValue;
+}
+
+
+// 現在のターンを表示
+- (void) showWhosTurn
+{
+    HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+    [hello.menuLayer setTurnWithIsBlue: isBlueTurn_];
+}
+
+// 現在のblue,redカウントを表示
+- (void) showCharCount
+{
+    int blueCount = 0;
+    int redCount = 0;
+    HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+    
+    for (CharBase* obj in self.baikinList)
+    {
+        if (obj.status != kCharaStatus_Dead)
+        {
+            if (obj.isBlue)
+                blueCount++;
+            else
+                redCount++;
+        }
+    }
+    
+    [hello.menuLayer setBlueCount: blueCount];
+    [hello.menuLayer setRedCount: redCount];
 }
 
 @end
