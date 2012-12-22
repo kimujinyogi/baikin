@@ -46,6 +46,11 @@
 - (void) setSurroundingObjToDye: (CGPoint)point
                            Blue: (BOOL)isBlue;
 
+// 周りの座標を返す
+- (void) surroundingLoopProcWithPoint: (CGPoint)point
+                               Offset: (int)offset
+                                Block: (void (^)(int posX, int posY, BOOL* isStop))block;
+
 // キャラクターのターンであるかを調べる
 - (BOOL) checkTurnWithObj: (CharBase*)obj;
 
@@ -305,19 +310,46 @@
     [obj setPosition: getCenterXAndY(point.x, point.y)];
     [self setSurroundingObjToDye: point
                             Blue: obj.isBlue];
+//    [(NSMutableArray*)self.baikinList enumerateObjectsUsingBlock:<#^(id obj, NSUInteger idx, BOOL *stop)block#>
 }
 
 // 周りのキャラを自分と同じにする
 - (void) setSurroundingObjToDye: (CGPoint)point
                            Blue: (BOOL)isBlue
 {
-    int index = -1;
-    CharBase* otherObj = nil;
-    int posX, posY;
+    __block int index = -1;
+    __block CharBase* otherObj = nil;
+    
     // 周りの８マスのキャラを検索
-    for (int x = -1; x < 2; x++)
+    [self surroundingLoopProcWithPoint: point
+                                Offset: 1
+                                 Block: ^(int posX, int posY, BOOL* isStop)
+     {
+         index = getIndexXAndY(posX, posY);
+         otherObj = [self getReadyCharWithIndex: index];
+         if (otherObj.isBlue != isBlue)
+         {
+             if (isBlue == YES)
+             {
+                 [otherObj setBlueBaikin];
+             }
+             else
+             {
+                 [otherObj setRedBaikin];
+             }
+         }
+     }];
+}
+
+- (void) surroundingLoopProcWithPoint: (CGPoint)point
+                               Offset: (int)offset
+                                Block: (void (^)(int posX, int posY, BOOL* isStop))block
+{
+    BOOL isStop = NO;
+    int posX, posY;
+    for (int x = -offset; x < (offset + 1); x++)
     {
-        for (int y = -1; y < 2; y++)
+        for (int y = -offset; y < (offset + 1); y++)
         {
             // 自分
             if ((y == 0) &&
@@ -332,19 +364,9 @@
                 (posY > 6))
                 continue;
             
-            index = getIndexXAndY(posX, posY);
-            otherObj = [self getReadyCharWithIndex: index];
-            if (otherObj.isBlue != isBlue)
-            {
-                if (isBlue == YES)
-                {
-                    [otherObj setBlueBaikin];
-                }
-                else
-                {
-                    [otherObj setRedBaikin];
-                }
-            }
+            block(posX, posY, &isStop);
+            if (isStop == YES)
+                return;
         }
     }
 }
@@ -375,24 +397,26 @@
 // 現在のターンの人が移動出来るマスがあるかをチェック
 - (BOOL) checkCanMoveTile
 {
-    BOOL returnValue = NO;
+    __block BOOL returnValue = NO;
     for (CharBase* obj in self.baikinList)
     {
-        if (obj.status == kCharaStatus_Dead)
+        if (obj.status != kCharaStatus_Dead)
         {
             // 現在ターンのキャラクター
             if (obj.isBlue == isBlueTurn_)
             {
-                // このキャラクターが移動出来るtileがあるかをチェックする
-                // あったら、
-                for (CharBase* obj in self.baikinList)
-                {
-                    if (obj.status == kCharaStatus_Dead)
-                    {
-                        if (0)
-                            returnValue = YES;
-                    }
-                }
+                CGPoint other = getXAndYFromIndex(obj.index);
+                // objの座標を元に、周りに空いている所があるのか調べて行く
+                [self surroundingLoopProcWithPoint: other
+                                            Offset: 2
+                                             Block: ^(int posX, int posY, BOOL* isStop)
+                 {
+                     if ([self getReadyCharWithIndex: getIndexXAndY(posX, posY)] == nil)
+                         returnValue = YES;
+                 }];
+                
+                if (returnValue == YES)
+                    break;
             }
         }
     }
