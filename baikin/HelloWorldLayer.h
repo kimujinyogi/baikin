@@ -13,7 +13,7 @@
 
 @class CharLayer;
 @class MenuLayer;
-@interface HelloWorldLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface HelloWorldLayer : CCLayer
 {
 }
 

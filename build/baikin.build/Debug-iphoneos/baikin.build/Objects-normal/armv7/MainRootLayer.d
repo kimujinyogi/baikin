@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/IntroLayer.m \
-  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/IntroLayer.h \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Menu/MainRootLayer.m \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/AppDelegate.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/cocos2d.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionManager.h \

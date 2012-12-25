@@ -138,6 +138,7 @@
 		10AC440A167DE4A0004F55B5 /* baikinred-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AC4408167DE4A0004F55B5 /* baikinred-hd.png */; };
 		10AC440B167DE4A0004F55B5 /* baikinred.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AC4409167DE4A0004F55B5 /* baikinred.png */; };
 		312E4D96167C30C300748323 /* CharLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E4D95167C30C300748323 /* CharLayer.m */; };
+		315A0DB516896047007145AE /* MainRootLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 315A0DB416896047007145AE /* MainRootLayer.m */; };
 		318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */; };
 		318D1DBD1676EFDE00AAA148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */; };
 		31D786BE167AE935003ECA1D /* CharBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D786BD167AE935003ECA1D /* CharBase.m */; };
@@ -417,6 +418,8 @@
 		10AC4409167DE4A0004F55B5 /* baikinred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baikinred.png; sourceTree = "<group>"; };
 		312E4D94167C30C300748323 /* CharLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharLayer.h; sourceTree = "<group>"; };
 		312E4D95167C30C300748323 /* CharLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharLayer.m; sourceTree = "<group>"; };
+		315A0DB316896047007145AE /* MainRootLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRootLayer.h; sourceTree = "<group>"; };
+		315A0DB416896047007145AE /* MainRootLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRootLayer.m; sourceTree = "<group>"; };
 		318D1DB91676EDA300AAA148 /* TouchInterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInterfaceLayer.h; sourceTree = "<group>"; };
 		318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchInterfaceLayer.m; sourceTree = "<group>"; };
 		318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -886,6 +889,8 @@
 		1075187116762C090065B49F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				315A0DB316896047007145AE /* MainRootLayer.h */,
+				315A0DB416896047007145AE /* MainRootLayer.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1138,6 +1143,7 @@
 				312E4D96167C30C300748323 /* CharLayer.m in Sources */,
 				10AC4406167DDBD7004F55B5 /* TileFunctions.m in Sources */,
 				31EEDA691682CD8000F2ABB8 /* MenuLayer.m in Sources */,
+				315A0DB516896047007145AE /* MainRootLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,8 @@
 @private
     CharBase* selectedCharP_;         // 選択されたキャラクター
     BOOL isBlueTurn_;
+    int blueCount_;
+    int redCount_;
 }
 
 @property (nonatomic, retain) NSArray* baikinList;
@@ -387,7 +389,29 @@
     // 順番が来たキャラクターが送る場所があるのか確認する
     // 戻す
     if ([self checkCanMoveTile] == NO)
+    {
         isBlueTurn_ = !isBlueTurn_;
+        // 勝利
+        // 全てのますが埋まっているか？？
+        if ((blueCount_ + redCount_) >= (7 * 7))
+        {
+            if (blueCount_ == redCount_)
+            {
+                NSLog(@"引き分け");
+            }
+            // 数が多い色が勝利
+            else
+            {
+                NSLog(@"%@の勝利", (blueCount_ > redCount_) ? @"Blue" : @"Red");
+            }
+        }
+        // 埋まってない
+        else
+        {
+            // isBlueTurn_の勝利
+            NSLog(@"%@の勝利", (isBlueTurn_ == YES) ? @"Blue" : @"Red");
+        }
+    }
     
     // 表示
     [self showWhosTurn];
@@ -435,8 +459,8 @@
 // 現在のblue,redカウントを表示
 - (void) showCharCount
 {
-    int blueCount = 0;
-    int redCount = 0;
+    blueCount_ = 0;
+    redCount_ = 0;
     HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
     
     for (CharBase* obj in self.baikinList)
@@ -444,14 +468,14 @@
         if (obj.status != kCharaStatus_Dead)
         {
             if (obj.isBlue)
-                blueCount++;
+                blueCount_++;
             else
-                redCount++;
+                redCount_++;
         }
     }
     
-    [hello.menuLayer setBlueCount: blueCount];
-    [hello.menuLayer setRedCount: redCount];
+    [hello.menuLayer setBlueCount: blueCount_];
+    [hello.menuLayer setRedCount: redCount_];
 }
 
 @end

@@ -1,5 +1,6 @@
 dependencies: \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Game/BoardObj/MenuLayer.m \
+  /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/Source/Menu/MainRootLayer.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/cocos2d.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/ccConfig.h \
   /Users/kimujinhyoku/Desktop/AllProject/MyPrivate/baikin/baikin/libs/cocos2d/CCActionManager.h \
