@@ -118,20 +118,48 @@
         [obj setDead];
     }
     
-    for (int i = 0; i < count; i++)
+    // テスト用
+    for (int i = 0; i < 46; i++)
     {
-        if ((i + 1) < [self.baikinList count])
+        if (i == 29)
         {
-            CharBase* obj = [self.baikinList objectAtIndex: i * 2];
-            [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
-            [obj setRedBaikin];
-            [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
-            obj = [self.baikinList objectAtIndex: i * 2 + 1];
-            [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
+            
+        }
+        else if (i == 28)
+        {
+            
+        }
+        else
+        {
+            CharBase* obj = [self.baikinList objectAtIndex: i];
+            CGPoint point = getXAndYFromIndex(i);
+            [obj setPosition: getCenterXAndY(point.x, point.y)];
             [obj setBlueBaikin];
-            [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
+            [obj setIndex: getIndexXAndY(point.x, point.y)];
         }
     }
+    
+    CharBase* obj = [self.baikinList objectAtIndex: 48];
+    CGPoint point = getXAndYFromIndex(48);
+    [obj setPosition: getCenterXAndY(point.x, point.y)];
+    [obj setRedBaikin];
+    [obj setIndex: getIndexXAndY(point.x, point.y)];
+    
+//    for (int i = 0; i < count; i++)
+//    {
+//        if ((i + 1) < [self.baikinList count])
+//        {
+//            CharBase* obj = [self.baikinList objectAtIndex: i * 2];
+//            [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
+//            [obj setRedBaikin];
+//            [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
+//            obj = [self.baikinList objectAtIndex: i * 2 + 1];
+//            [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
+//            [obj setBlueBaikin];
+//            [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
+//        }
+//    }
+    
     
     // 表示
     [self showWhosTurn];
@@ -199,11 +227,14 @@
                         [self setMoveCharaWithXY: other
                                              Obj: selectedCharP_];
                     }
+                    *
                     [self changeTurn];
                 }
-                
-                // 選択中のキャラを待機状態にする
-                [self setReadyCurrentSelectedObj];
+                else
+                {
+                    // 選択中のキャラを待機状態にする
+                    [self setReadyCurrentSelectedObj];
+                }
             }
         }
         returnValue = YES;
@@ -436,7 +467,10 @@
                                              Block: ^(int posX, int posY, BOOL* isStop)
                  {
                      if ([self getReadyCharWithIndex: getIndexXAndY(posX, posY)] == nil)
+                     {
                          returnValue = YES;
+                         (*isStop) = YES;
+                     }
                  }];
                 
                 if (returnValue == YES)

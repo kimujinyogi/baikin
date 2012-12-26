@@ -69,7 +69,7 @@
     
     if (isCharacterAction == NO)
     {
-        NSLog(@"キャラが無い");
+//        NSLog(@"キャラが無い");
     }
 }
 
