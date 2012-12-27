@@ -15,6 +15,7 @@
 
 #import "TouchInterfaceLayer.h"
 
+
 @implementation TouchInterfaceLayer
 
 - (id) init
@@ -23,7 +24,7 @@
     {
         CCDirector* director = [CCDirector sharedDirector];
         [[director touchDispatcher] addTargetedDelegate: self
-                                               priority: 0
+                                               priority: 10
                                         swallowsTouches: YES];
     }
     
@@ -32,7 +33,8 @@
 
 - (void) dealloc
 {
-    
+    CCDirector* director = [CCDirector sharedDirector];
+    [[director touchDispatcher] removeDelegate: self];
     
     [super dealloc];
 }

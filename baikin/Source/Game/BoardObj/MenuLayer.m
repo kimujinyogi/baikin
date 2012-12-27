@@ -11,13 +11,22 @@
 #import "MenuLayer.h"
 
 @interface MenuLayer ()
+{
+@private
+    BOOL isGameOver_;
+    BOOL isTouchInterception_;
+    BOOL isPause_;
+}
 
 @property (nonatomic, retain) CCLabelTTF* turnLabel;
 @property (nonatomic, retain) CCLabelTTF* blueCountLabel;
 @property (nonatomic, retain) CCLabelTTF* redCountLabel;
+@property (nonatomic, retain) CCLabelTTF* winLabel;
+@property (nonatomic, retain) CCLayerColor* colorLayer;
 
 - (void) initializeMenuItems;
 - (void) initializePointLabels;
+- (void) setColorLayerHidden: (BOOL)isHidden;
 
 @end
 
@@ -37,6 +46,10 @@
 
 - (void) dealloc
 {
+    CCDirector* director = [CCDirector sharedDirector];
+    [[director touchDispatcher] removeDelegate: self];
+    [self setColorLayer: nil];
+    [self setWinLabel: nil];
     [self setTurnLabel: nil];
     [self setBlueCountLabel: nil];
     [self setRedCountLabel: nil];
@@ -58,14 +71,15 @@
     CCMenuItemFont* item1 = [CCMenuItemFont itemWithString: @"||"
                                                      block: ^(id sender)
                              {
-                                 [[CCDirector sharedDirector] replaceScene: [MainRootLayer scene]];
+                                 [self setTouchInterceptionOnAndFadeOut: !isPause_];
                              }];
     
     CCMenu* menu = [CCMenu menuWithItems: item1, nil];
     [menu alignItemsVerticallyWithPadding: 45];
     menu.position = CGPointMake(size.width / 2, size.height - 20);
     
-    [self addChild: menu];
+    [self addChild: menu
+                 z: 1];
 }
 
 - (void) initializePointLabels
@@ -102,7 +116,6 @@
     [self.redCountLabel setColor: ccc3(255, 60, 60)];
 }
 
-
 #pragma mark Instance method
 
 // ターンをセット
@@ -136,6 +149,129 @@
 }
 
 
+// YESだと、タッチイベントをメニューで横取りする（操作を不可能に）
+- (void) setTouchInterceptionOn: (BOOL)flag
+{
+    if (isTouchInterception_ == flag) return;
+    
+    isTouchInterception_ = flag;
+    
+    CCDirector* director = [CCDirector sharedDirector];
+    if (isTouchInterception_)
+    {
+        // swallowsTouchesをYESにしてccTouchBeganの戻り値をYESにすると、
+        // 自分だけがイベントを受け取るようになる
+        [[director touchDispatcher] addTargetedDelegate: self
+                                               priority: 0
+                                        swallowsTouches: YES];
+    }
+    else
+    {        
+        [[director touchDispatcher] removeDelegate: self];
+    }
+}
 
+- (void) setTouchInterceptionOnAndFadeOut: (BOOL)flag
+{
+    if (isPause_ == flag) return;
+    
+    isPause_ = flag;
+    
+    [self setTouchInterceptionOn: flag];
+    [self setColorLayerHidden: !isPause_];
+}
+
+// 勝者を表示させる
+// ゲームプレーを止める
+// 1はblueのwin
+- (void) showVictoryLabelWithWin: (int)blue
+{
+    NSString* str = nil;
+    if (blue > 0)
+        str = @"Blue\nWin";
+    else if (blue < 0)
+        str = @"Red\nWin";
+    else
+        str = @"Draw";
+    
+    CGSize size = [[CCDirector sharedDirector] winSize];
+    [self setWinLabel: [CCLabelTTF labelWithString: str
+                                          fontName: @"Helvetica-Bold"
+                                          fontSize: 62]];
+    [self addChild: self.winLabel
+                 z: 5];
+    self.winLabel.position = ccp(size.width / 2, size.height / 2);
+    
+    if (blue > 0)
+        [self.winLabel setColor: ccc3(60, 60, 255)];
+    else if (blue < 0)
+        [self.winLabel setColor: ccc3(255, 60, 60)];
+    else
+        [self.winLabel setColor: ccc3(60, 255, 60)];
+    
+    [self setTouchInterceptionOn: YES];
+    isGameOver_ = YES;
+}
+
+
+- (void) setColorLayerHidden: (BOOL)isHidden
+{
+    if (isHidden == YES)
+    {
+        [self.colorLayer removeFromParentAndCleanup: YES];
+        [self setColorLayer: nil];
+    }
+    else
+    {
+        if (self.colorLayer == nil)
+        {
+            CGSize size = [[CCDirector sharedDirector] winSize];
+            self.colorLayer = [CCLayerColor layerWithColor: ccc4(0, 0, 0, 50)];
+            self.colorLayer.contentSize = size;
+            self.colorLayer.position = ccp(0, 0);
+            [self addChild: self.colorLayer
+                         z: 0];
+        }
+    }
+}
+
+
+// このメソッドが呼ばれる時は、もうゲームが中止されたと言う事になるので、自分で受け取るようにする
+- (BOOL) ccTouchBegan: (UITouch*)touch
+            withEvent: (UIEvent*)event
+{
+    return YES;
+}
+
+
+- (void) ccTouchEnded: (UITouch*)touch
+            withEvent: (UIEvent*)event
+{
+    if (isGameOver_ == YES)
+    {
+        [[CCDirector sharedDirector] replaceScene: [MainRootLayer scene]];
+        CCDirector* director = [CCDirector sharedDirector];
+        [[director touchDispatcher] removeDelegate: self];
+        isGameOver_ = NO;
+    }
+    else
+    {
+        if (isPause_ == YES)
+        {
+            [self setTouchInterceptionOnAndFadeOut: NO];
+        }
+    }
+}
 
 @end
+
+
+
+
+
+
+
+
+
+
+

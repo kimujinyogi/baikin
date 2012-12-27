@@ -119,46 +119,46 @@
     }
     
     // テスト用
-    for (int i = 0; i < 46; i++)
-    {
-        if (i == 29)
-        {
-            
-        }
-        else if (i == 28)
-        {
-            
-        }
-        else
-        {
-            CharBase* obj = [self.baikinList objectAtIndex: i];
-            CGPoint point = getXAndYFromIndex(i);
-            [obj setPosition: getCenterXAndY(point.x, point.y)];
-            [obj setBlueBaikin];
-            [obj setIndex: getIndexXAndY(point.x, point.y)];
-        }
-    }
-    
-    CharBase* obj = [self.baikinList objectAtIndex: 48];
-    CGPoint point = getXAndYFromIndex(48);
-    [obj setPosition: getCenterXAndY(point.x, point.y)];
-    [obj setRedBaikin];
-    [obj setIndex: getIndexXAndY(point.x, point.y)];
-    
-//    for (int i = 0; i < count; i++)
+//    for (int i = 0; i < 46; i++)
 //    {
-//        if ((i + 1) < [self.baikinList count])
+//        if (i == 29)
 //        {
-//            CharBase* obj = [self.baikinList objectAtIndex: i * 2];
-//            [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
-//            [obj setRedBaikin];
-//            [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
-//            obj = [self.baikinList objectAtIndex: i * 2 + 1];
-//            [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
+//            
+//        }
+//        else if (i == 28)
+//        {
+//            
+//        }
+//        else
+//        {
+//            CharBase* obj = [self.baikinList objectAtIndex: i];
+//            CGPoint point = getXAndYFromIndex(i);
+//            [obj setPosition: getCenterXAndY(point.x, point.y)];
 //            [obj setBlueBaikin];
-//            [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
+//            [obj setIndex: getIndexXAndY(point.x, point.y)];
 //        }
 //    }
+//    
+//    CharBase* obj = [self.baikinList objectAtIndex: 48];
+//    CGPoint point = getXAndYFromIndex(48);
+//    [obj setPosition: getCenterXAndY(point.x, point.y)];
+//    [obj setRedBaikin];
+//    [obj setIndex: getIndexXAndY(point.x, point.y)];
+    
+    for (int i = 0; i < count; i++)
+    {
+        if ((i + 1) < [self.baikinList count])
+        {
+            CharBase* obj = [self.baikinList objectAtIndex: i * 2];
+            [obj setPosition: getCenterXAndY((redP + i)->x, (redP + i)->y)];
+            [obj setRedBaikin];
+            [obj setIndex: getIndexXAndY((redP + i)->x, (redP + i)->y)];
+            obj = [self.baikinList objectAtIndex: i * 2 + 1];
+            [obj setPosition: getCenterXAndY((blueP + i)->x, (blueP + i)->y)];
+            [obj setBlueBaikin];
+            [obj setIndex: getIndexXAndY((blueP + i)->x, (blueP + i)->y)];
+        }
+    }
     
     
     // 表示
@@ -227,7 +227,8 @@
                         [self setMoveCharaWithXY: other
                                              Obj: selectedCharP_];
                     }
-                    *
+                    // 選択中のキャラを待機状態にする
+                    [self setReadyCurrentSelectedObj];
                     [self changeTurn];
                 }
                 else
@@ -372,6 +373,7 @@
              }
          }
      }];
+    [self showCharCount];
 }
 
 - (void) surroundingLoopProcWithPoint: (CGPoint)point
@@ -428,19 +430,22 @@
         {
             if (blueCount_ == redCount_)
             {
-                NSLog(@"引き分け");
+                HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+                [hello.menuLayer showVictoryLabelWithWin: 0];
             }
             // 数が多い色が勝利
             else
             {
-                NSLog(@"%@の勝利", (blueCount_ > redCount_) ? @"Blue" : @"Red");
+                HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+                [hello.menuLayer showVictoryLabelWithWin: (blueCount_ > redCount_) ? 1 : -1];
             }
         }
         // 埋まってない
         else
         {
             // isBlueTurn_の勝利
-            NSLog(@"%@の勝利", (isBlueTurn_ == YES) ? @"Blue" : @"Red");
+            HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
+            [hello.menuLayer showVictoryLabelWithWin: (isBlueTurn_ == YES) ? 1 : -1];
         }
     }
     

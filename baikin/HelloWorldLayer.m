@@ -80,7 +80,8 @@ static HelloWorldLayer* _instance = nil;
         _instance = self;
         
         TouchInterfaceLayer* touchLayer = [TouchInterfaceLayer node];
-        [self addChild: touchLayer];
+        [self addChild: touchLayer
+                     z: 0];
         
         BoardLayer* board = [BoardLayer node];
         
