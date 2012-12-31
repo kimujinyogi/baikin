@@ -19,17 +19,22 @@
 
 #import "CharLayer.h"
 
+#define kCHARLARYER_CHAR_Z 10
+#define kCHARLARYER_CHAR_MOVE_Z 11
+
 
 @interface CharLayer ()
 {
 @private
-    CharBase* selectedCharP_;         // 選択されたキャラクター
+    CharBase* selectedCharP_;           // 選択されたキャラクター
+    CharBase* movingCharP_;             // 何らかのアニメーション中のキャラクター
     BOOL isBlueTurn_;
     int blueCount_;
     int redCount_;
 }
 
 @property (nonatomic, retain) NSArray* baikinList;
+@property (nonatomic, retain) NSMutableArray* movingBaikinList;
 
 // 選択中のキャラを待機状態にする
 - (void) setReadyCurrentSelectedObj;
@@ -44,9 +49,9 @@
 - (void) setMoveCharaWithXY: (CGPoint)point
                         Obj: (CharBase*)obj;
 
-// 周りのキャラを自分と同じにする
-- (void) setSurroundingObjToDye: (CGPoint)point
-                           Blue: (BOOL)isBlue;
+// 周りのキャラを自分と同Lじにする
+- (NSArray*) setSurroundingObjToDye: (CGPoint)point
+                               Blue: (BOOL)isBlue;
 
 // 周りの座標を返す
 - (void) surroundingLoopProcWithPoint: (CGPoint)point
@@ -84,17 +89,18 @@
         CharBase* chara = nil;
         int x, y;
         NSMutableArray* ar = [NSMutableArray arrayWithCapacity: 49];
-        for (int i = 0; i < 49; i++)
+        for (int i = 0; i < 49 + 8; i++)
         {
             chara = [CharBase node];
             [ar addObject: chara];
             [self addChild: chara
-                         z: 10];
+                         z: kCHARLARYER_CHAR_Z];
             x = i % 7;
             y = i / 7;
             [chara setPosition: getCenterXAndY(x, y)];
         }
         [self setBaikinList: [NSArray arrayWithArray: ar]];
+        [self setMovingBaikinList: [NSMutableArray array]];
     }
     
     return self;
@@ -103,6 +109,7 @@
 
 - (void) dealloc
 {
+    [self setMovingBaikinList: nil];
     [self setBaikinList: nil];
     
     [super dealloc];
@@ -227,9 +234,6 @@
                         [self setMoveCharaWithXY: other
                                              Obj: selectedCharP_];
                     }
-                    // 選択中のキャラを待機状態にする
-                    [self setReadyCurrentSelectedObj];
-                    [self changeTurn];
                 }
                 else
                 {
@@ -291,7 +295,7 @@
         returnValue = [CharBase node];
         [ar addObject: returnValue];
         [self addChild: returnValue
-                     z: 10];
+                     z: kCHARLARYER_CHAR_Z];
         [self setBaikinList: [NSArray arrayWithArray: ar]];
     }
     
@@ -322,38 +326,141 @@
                        Blue: (BOOL)isBlue
 {
     CharBase* obj = [self getReadyObj];
-    [obj setIndex: getIndexXAndY(point.x, point.y)];
-    [obj setPosition: getCenterXAndY(point.x, point.y)];
+    // 属性
     if (isBlue == YES)
-    {
         [obj setBlueBaikin];
-    }
     else
-    {
         [obj setRedBaikin];
-    }
-    [self setSurroundingObjToDye: point
-                            Blue: obj.isBlue];
+    // まず選択されたキャラクターと同じ位置に表示させる
+    [obj setPosition: selectedCharP_.position];
+
+    // 移動先（複製）のindexセット
+    [obj setIndex: getIndexXAndY(point.x, point.y)];
+
+    CCMoveTo* moveTo = [CCMoveTo actionWithDuration: 0.3f
+                                           position: getCenterXAndY(point.x, point.y)];
+    CCCallFunc* fanc = [CCCallFuncO actionWithTarget: self
+                                            selector: @selector(moveEndProc: )
+                                              object: obj];
+    CCSequence* seq = [CCSequence actions: moveTo, fanc, nil];
+    [obj runAction: seq];
+    
+    // 選択中のキャラを待機状態にする
+    [self setReadyCurrentSelectedObj];
+    
+    // 移動中の者をselectedCharPにする
+//    selectedCharP_ = obj;
 }
 
 // キャラを移動させる
 - (void) setMoveCharaWithXY: (CGPoint)point
                         Obj: (CharBase*)obj
 {
+    // タッチを防ぐ
+    MenuLayer* menu = [HelloWorldLayer shareInstance].menuLayer;
+    [menu setTouchInterceptionOn: YES];
+    
     [obj setIndex: getIndexXAndY(point.x, point.y)];
-    [obj setPosition: getCenterXAndY(point.x, point.y)];
-    [self setSurroundingObjToDye: point
-                            Blue: obj.isBlue];
-//    [(NSMutableArray*)self.baikinList enumerateObjectsUsingBlock:<#^(id obj, NSUInteger idx, BOOL *stop)block#>
+    CCMoveTo* moveTo = [CCMoveTo actionWithDuration: 0.3f
+                                           position: getCenterXAndY(point.x, point.y)];
+    CCCallFunc* fanc = [CCCallFuncO actionWithTarget: self
+                                            selector: @selector(moveEndProc: )
+                                              object: obj];
+    CCSequence* seq = [CCSequence actions: moveTo, fanc, nil];
+    [obj runAction: seq];
+    
+    // 選択中のキャラを待機状態にする
+    [self setReadyCurrentSelectedObj];
+    
+    // 移動中の者をselectedCharPにする
+    selectedCharP_ = obj;
 }
 
+
+#pragma mark - アニメーションの終了イベント
+
+- (void) moveEndProc: (CharBase*)selectedChar
+{
+    CGPoint point = getXAndYFromIndex(selectedChar.index);
+    
+    // 自分の見方にするキャラクターのリストを取得
+    NSArray* willChangeList = [self setSurroundingObjToDye: point
+                                                      Blue: selectedChar.isBlue];
+
+    // 移動アニメーションするキャラクターを準備
+    [[self movingBaikinList] removeAllObjects];
+    for (int i = 0; i < [willChangeList count]; i++)
+    {
+        CharBase* obj = [self getReadyObj];
+        CharBase* targetObj = [willChangeList objectAtIndex: i];
+        [obj setPosition: selectedChar.position];
+        if (selectedChar.isBlue)
+            [obj setBlueBaikin];
+        else
+            [obj setRedBaikin];
+        
+        [obj setZOrder: kCHARLARYER_CHAR_MOVE_Z];
+        [[self movingBaikinList] addObject: obj];
+        // indexを同じにする
+        [obj setIndex: targetObj.index];
+        CCMoveTo* moveTo = [CCMoveTo actionWithDuration: 0.3f
+                                               position: targetObj.position];
+        CCCallFuncO* fanc = [CCCallFuncO actionWithTarget: self
+                                                 selector: @selector(copyAnimationEndProc: )
+                                                   object: obj];
+        CCSequence* seq = [CCSequence actions: moveTo, fanc, nil];
+        [obj runAction: seq];
+    }
+    
+    if ([willChangeList count] == 0)
+    {
+        MenuLayer* menu = [HelloWorldLayer shareInstance].menuLayer;
+        [menu setTouchInterceptionOn: NO];
+        // 選択中のキャラを待機状態にする
+        [self changeTurn];
+    }
+}
+
+- (void) copyAnimationEndProc: (CharBase*)obj
+{
+    for (CharBase* cha in self.baikinList)
+    {
+        if (cha != obj)
+        {
+            if (cha.index == obj.index)
+            {
+                if (cha.isBlue)
+                    [cha setRedBaikin];
+                else
+                    [cha setBlueBaikin];
+            }
+        }
+    }
+    [obj setZOrder: kCHARLARYER_CHAR_Z];
+    [obj setDead];
+    
+    [[self movingBaikinList] removeObject: obj];
+    
+    if ([[self movingBaikinList] count] == 0)
+    {
+        MenuLayer* menu = [HelloWorldLayer shareInstance].menuLayer;
+        [menu setTouchInterceptionOn: NO];
+        // 選択中のキャラを待機状態にする
+        [self changeTurn];
+    }
+}
+
+
+#pragma mark - キャラクターの状態処理
+
 // 周りのキャラを自分と同じにする
-- (void) setSurroundingObjToDye: (CGPoint)point
-                           Blue: (BOOL)isBlue
+- (NSArray*) setSurroundingObjToDye: (CGPoint)point
+                               Blue: (BOOL)isBlue
 {
     __block int index = -1;
     __block CharBase* otherObj = nil;
     
+    NSMutableArray* returnValue = [NSMutableArray array];
     // 周りの８マスのキャラを検索
     [self surroundingLoopProcWithPoint: point
                                 Offset: 1
@@ -361,19 +468,12 @@
      {
          index = getIndexXAndY(posX, posY);
          otherObj = [self getReadyCharWithIndex: index];
-         if (otherObj.isBlue != isBlue)
-         {
-             if (isBlue == YES)
-             {
-                 [otherObj setBlueBaikin];
-             }
-             else
-             {
-                 [otherObj setRedBaikin];
-             }
-         }
+         if (otherObj != nil)
+             if (otherObj.isBlue != isBlue)
+                 [returnValue addObject: otherObj];
      }];
-    [self showCharCount];
+    
+    return returnValue;
 }
 
 - (void) surroundingLoopProcWithPoint: (CGPoint)point
@@ -443,9 +543,18 @@
         // 埋まってない
         else
         {
-            // isBlueTurn_の勝利
+            // 埋まってない時、すべてを埋めた後の数で勝負を決める
+            if (isBlueTurn_ == YES)
+            {
+                blueCount_ = (7 * 7) - (blueCount_ + redCount_);
+            }
+            else
+            {
+                redCount_ = (7 * 7) - (blueCount_ + redCount_);
+            }
+            // 数が多い色が勝利
             HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
-            [hello.menuLayer showVictoryLabelWithWin: (isBlueTurn_ == YES) ? 1 : -1];
+            [hello.menuLayer showVictoryLabelWithWin: (blueCount_ > redCount_) ? 1 : -1];
         }
     }
     
@@ -487,6 +596,7 @@
     return returnValue;
 }
 
+#pragma mark - 画面更新処理
 
 // 現在のターンを表示
 - (void) showWhosTurn

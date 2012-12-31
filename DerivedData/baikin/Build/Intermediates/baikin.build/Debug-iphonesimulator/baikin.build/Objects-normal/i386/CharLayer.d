@@ -1,7 +1,6 @@
 dependencies: \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Character/CharLayer.m \
-  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/TileFunctions.h \
-  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Character/CharBase.h \
+  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/cocos2d.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/ccConfig.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionManager.h \
@@ -98,4 +97,7 @@ dependencies: \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/Support/TransformUtils.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/Support/CCProfiling.h \
   baikin/libs/kazmath/include/kazmath/GL/matrix.h \
+  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/HelloWorldLayer.h \
+  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/TileFunctions.h \
+  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Character/CharBase.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Character/CharLayer.h

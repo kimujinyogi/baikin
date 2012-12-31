@@ -51,6 +51,7 @@ isBlue = isBlue_;
 {
     status_ = kCharaStatus_Dead;
     [self.sprite setOpacity: 0];
+    [self setIndex: -1];
 }
 
 - (void) setRedBaikin
