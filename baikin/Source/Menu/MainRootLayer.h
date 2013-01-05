@@ -9,7 +9,10 @@
 #import <GameKit/GameKit.h>
 #import "cocos2d.h"
 
-@interface MainRootLayer : CCLayer <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate>
+@interface MainRootLayer : CCLayer
+<GKAchievementViewControllerDelegate,
+ GKLeaderboardViewControllerDelegate,
+ GKMatchmakerViewControllerDelegate>
 
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

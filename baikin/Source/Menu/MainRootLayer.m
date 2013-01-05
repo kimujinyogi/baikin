@@ -7,6 +7,8 @@
 //
 
 
+#import "MultiplayManager.h"
+
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 // Import the interfaces
@@ -39,6 +41,10 @@
 {
     if ((self = [super init]))
     {
+        // GameCenterにログインしてないなら、する
+        if ([GKLocalPlayer localPlayer].authenticated == NO)
+            [[GKLocalPlayer localPlayer] authenticateWithCompletionHandler: nil];
+        
         CGSize winSize = [[CCDirector sharedDirector] winSize];
        
         [CCMenuItemFont setFontName: @"Helvetica-Bold"];
@@ -55,7 +61,25 @@
                                     [[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
                                 }];
         
-        CCMenu* menu = [CCMenu menuWithItems: item1, item2, nil];
+        CCMenuItemFont* item3 = [CCMenuItemFont itemWithString: @"マルチプレー"
+                                                         block: ^(id sender)
+                                 {
+                                     GKMatchRequest* request = [[[GKMatchRequest alloc] init] autorelease];
+                                     request.minPlayers = 2;
+                                     request.maxPlayers = 2;
+                                     GKMatchmakerViewController* mmvc =
+                                     [[[GKMatchmakerViewController alloc] initWithMatchRequest:request]
+                                      autorelease];
+                                     
+                                     AppController* app = (AppController*) [[UIApplication sharedApplication] delegate];
+                                     mmvc.matchmakerDelegate = self;
+                                     
+                                     [[app navController] presentViewController: mmvc
+                                                        animated: YES
+                                                      completion: nil];
+                                 }];
+        
+        CCMenu* menu = [CCMenu menuWithItems: item1, item2, item3, nil];
         [menu alignItemsVerticallyWithPadding: 45];
         menu.position = CGPointMake(winSize.width / 2, winSize.height / 2);
         [self addChild: menu];
@@ -83,6 +107,51 @@
 	AppController* app = (AppController*) [[UIApplication sharedApplication] delegate];
 	[[app navController] dismissModalViewControllerAnimated: YES];
 }
+
+
+#pragma mark GameKit(Matching) delegate
+
+// The user has cancelled matchmaking
+- (void) matchmakerViewControllerWasCancelled: (GKMatchmakerViewController *)viewController
+{
+    [viewController dismissModalViewControllerAnimated: YES];
+}
+
+// Matchmaking has failed with an error
+- (void) matchmakerViewController: (GKMatchmakerViewController*)viewController
+                 didFailWithError: (NSError*)error
+{
+    if (error != nil)
+        NSLog(@"%@", [error localizedDescription]);
+    NSLog(@"wqjefiwejfi;");
+}
+
+
+- (void) matchmakerViewController: (GKMatchmakerViewController*)viewController
+                     didFindMatch: (GKMatch*)match
+{
+    [viewController dismissModalViewControllerAnimated: YES];
+    // matchを保存して置く
+    [[MultiplayManager shareInstance] setGameMatch: match];
+    
+    [self performSelector: @selector(aa)
+               withObject: nil
+               afterDelay: 1];
+}
+- (void) aa
+{
+        [[MultiplayManager shareInstance] sendTouchPoint: CGPointMake(0, 0)];
+}
+
+// Players have been found for a server-hosted game, the game should start
+- (void) matchmakerViewController: (GKMatchmakerViewController*)viewController
+                   didFindPlayers: (NSArray*)playerIDs
+{
+
+}
+
+
+
 
 @end
 
