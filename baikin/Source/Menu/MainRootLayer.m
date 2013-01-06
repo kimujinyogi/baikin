@@ -14,6 +14,8 @@
 // Import the interfaces
 #import "HelloWorldLayer.h"
 
+#import "MultiplayGameMenu.h"
+
 #import "MainRootLayer.h"
 
 @implementation MainRootLayer
@@ -64,19 +66,24 @@
         CCMenuItemFont* item3 = [CCMenuItemFont itemWithString: @"マルチプレー"
                                                          block: ^(id sender)
                                  {
-                                     GKMatchRequest* request = [[[GKMatchRequest alloc] init] autorelease];
-                                     request.minPlayers = 2;
-                                     request.maxPlayers = 2;
-                                     GKMatchmakerViewController* mmvc =
-                                     [[[GKMatchmakerViewController alloc] initWithMatchRequest:request]
-                                      autorelease];
+                                     [[CCDirector sharedDirector] replaceScene: [MultiplayGameMenu scene]];
                                      
-                                     AppController* app = (AppController*) [[UIApplication sharedApplication] delegate];
-                                     mmvc.matchmakerDelegate = self;
-                                     
-                                     [[app navController] presentViewController: mmvc
-                                                        animated: YES
-                                                      completion: nil];
+                                     if (0)
+                                     {
+                                         GKMatchRequest* request = [[[GKMatchRequest alloc] init] autorelease];
+                                         request.minPlayers = 2;
+                                         request.maxPlayers = 2;
+                                         GKMatchmakerViewController* mmvc =
+                                         [[[GKMatchmakerViewController alloc] initWithMatchRequest:request]
+                                          autorelease];
+                                         
+                                         AppController* app = (AppController*) [[UIApplication sharedApplication] delegate];
+                                         mmvc.matchmakerDelegate = self;
+                                         
+                                         [[app navController] presentViewController: mmvc
+                                                                           animated: YES
+                                                                         completion: nil];
+                                     }
                                  }];
         
         CCMenu* menu = [CCMenu menuWithItems: item1, item2, item3, nil];
@@ -131,16 +138,11 @@
                      didFindMatch: (GKMatch*)match
 {
     [viewController dismissModalViewControllerAnimated: YES];
+    
+    [[CCDirector sharedDirector] replaceScene: [MultiplayGameMenu scene]];
+    
     // matchを保存して置く
     [[MultiplayManager shareInstance] setGameMatch: match];
-    
-    [self performSelector: @selector(aa)
-               withObject: nil
-               afterDelay: 1];
-}
-- (void) aa
-{
-        [[MultiplayManager shareInstance] sendTouchPoint: CGPointMake(0, 0)];
 }
 
 // Players have been found for a server-hosted game, the game should start

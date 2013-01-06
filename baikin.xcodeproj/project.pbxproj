@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1006683F16998E4900931230 /* MultiplayGameMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1006683E16998E4900931230 /* MultiplayGameMenu.m */; };
 		107516D816762A870065B49F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107516D716762A870065B49F /* QuartzCore.framework */; };
 		107516DA16762A870065B49F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107516D916762A870065B49F /* OpenGLES.framework */; };
 		107516DC16762A870065B49F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 107516DB16762A870065B49F /* OpenAL.framework */; };
@@ -149,6 +150,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1006683D16998E4900931230 /* MultiplayGameMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayGameMenu.h; sourceTree = "<group>"; };
+		1006683E16998E4900931230 /* MultiplayGameMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayGameMenu.m; sourceTree = "<group>"; };
 		107516D316762A870065B49F /* baikin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = baikin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		107516D716762A870065B49F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		107516D916762A870065B49F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -892,6 +895,8 @@
 		1075187116762C090065B49F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1006683D16998E4900931230 /* MultiplayGameMenu.h */,
+				1006683E16998E4900931230 /* MultiplayGameMenu.m */,
 				315A0DB316896047007145AE /* MainRootLayer.h */,
 				315A0DB416896047007145AE /* MainRootLayer.m */,
 			);
@@ -1150,6 +1155,7 @@
 				31EEDA691682CD8000F2ABB8 /* MenuLayer.m in Sources */,
 				315A0DB516896047007145AE /* MainRootLayer.m in Sources */,
 				10CECA5B16980053000C7130 /* MultiplayManager.m in Sources */,
+				1006683F16998E4900931230 /* MultiplayGameMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

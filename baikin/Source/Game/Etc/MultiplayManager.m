@@ -11,6 +11,7 @@
 @interface MultiplayManager ()
 
 @property (nonatomic, retain) GKMatch* match;
+@property (nonatomic, retain) GKPlayer* otherPlayer;
 
 @end
 
@@ -36,8 +37,10 @@ static MultiplayManager* _instance;
 
 - (void) dealloc
 {
+    [self setDelegate: nil];
     [[self match] setDelegate: nil];
     [self setMatch: nil];
+    [self setOtherPlayer: nil];
     _instance = nil;
     [super dealloc];
 }
@@ -63,6 +66,31 @@ static MultiplayManager* _instance;
 {
     [self setMatch: match];
     [[self match] setDelegate: self];
+
+    [GKPlayer loadPlayersForIdentifiers: [match playerIDs]
+                  withCompletionHandler: ^(NSArray *players, NSError *error)
+     {
+         // ここは相手プレーヤーは一人
+         if (error != nil)
+         {
+             NSLog(@"プレーヤーの情報の取得に失敗 : %@", [error localizedDescription]);
+         }
+         else
+         {
+             [self setOtherPlayer: [players lastObject]];
+             [self.delegate multiplayDidDownloadOtherPlayer: self.otherPlayer];
+         }
+     }];
+}
+
+- (GKPlayer*) getLocalPlayer
+{
+    return [GKLocalPlayer localPlayer];
+}
+
+- (GKPlayer*) getOtherPlayer
+{
+    return self.otherPlayer;
 }
 
 
@@ -115,6 +143,10 @@ didChangeState: (GKPlayerConnectionState)state
 //    GKPlayerStateConnected,     // connected to the match
 //    GKPlayerStateDisconnected   // disconnected from the match
     NSLog(@"player = %@, state = %d", playerID, state);
+    if (state == GKPlayerStateDisconnected)
+    {
+        [self.delegate multiplayFailedConnect];
+    }
 }
 
 // The match was unable to be established with any players due to an error.
@@ -123,6 +155,7 @@ didFailWithError: (NSError*)error
 {
     NSLog(@"eerrroror");
     NSLog(@"%@", [error localizedDescription]);
+    [self.delegate multiplayFailedConnect];
 }
 
 // This method is called when the match is interrupted; if it returns YES, a new invite will be sent to attempt reconnection. This is supported only for 1v1 games
