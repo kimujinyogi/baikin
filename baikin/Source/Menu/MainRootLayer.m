@@ -66,9 +66,9 @@
         CCMenuItemFont* item3 = [CCMenuItemFont itemWithString: @"マルチプレー"
                                                          block: ^(id sender)
                                  {
-                                     [[CCDirector sharedDirector] replaceScene: [MultiplayGameMenu scene]];
+//                                     [[CCDirector sharedDirector] replaceScene: [MultiplayGameMenu scene]];
                                      
-                                     if (0)
+//                                     if (0)
                                      {
                                          GKMatchRequest* request = [[[GKMatchRequest alloc] init] autorelease];
                                          request.minPlayers = 2;

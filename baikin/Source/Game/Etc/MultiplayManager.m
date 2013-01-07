@@ -13,6 +13,9 @@
 @property (nonatomic, retain) GKMatch* match;
 @property (nonatomic, retain) GKPlayer* otherPlayer;
 
+// プレイヤーの配列を渡して、画面を更新する処理
+- (void) updateOtherPlayerLabelWithPlayerIDs: (NSArray*)array;
+
 @end
 
 @implementation MultiplayManager
@@ -66,21 +69,9 @@ static MultiplayManager* _instance;
 {
     [self setMatch: match];
     [[self match] setDelegate: self];
-
-    [GKPlayer loadPlayersForIdentifiers: [match playerIDs]
-                  withCompletionHandler: ^(NSArray *players, NSError *error)
-     {
-         // ここは相手プレーヤーは一人
-         if (error != nil)
-         {
-             NSLog(@"プレーヤーの情報の取得に失敗 : %@", [error localizedDescription]);
-         }
-         else
-         {
-             [self setOtherPlayer: [players lastObject]];
-             [self.delegate multiplayDidDownloadOtherPlayer: self.otherPlayer];
-         }
-     }];
+    NSLog(@"%@", [match playerIDs]);
+    if ([match playerIDs] != nil)
+        [self updateOtherPlayerLabelWithPlayerIDs: [match playerIDs]];
 }
 
 - (GKPlayer*) getLocalPlayer
@@ -117,6 +108,27 @@ static MultiplayManager* _instance;
 }
 
 
+#pragma mark - Private mathod
+// プレイヤーの配列を渡して、画面を更新する処理
+- (void) updateOtherPlayerLabelWithPlayerIDs: (NSArray*)array
+{
+    [GKPlayer loadPlayersForIdentifiers: array
+                  withCompletionHandler: ^(NSArray *players, NSError *error)
+     {
+         // ここは相手プレーヤーは一人
+         if (error != nil)
+         {
+             NSLog(@"プレーヤーの情報の取得に失敗 : %@", [error localizedDescription]);
+         }
+         else
+         {
+             [self setOtherPlayer: [players lastObject]];
+             [self.delegate multiplayDidDownloadOtherPlayer: self.otherPlayer];
+         }
+     }];
+}
+
+
 
 #pragma mark - Match Delegate
 
@@ -146,6 +158,10 @@ didChangeState: (GKPlayerConnectionState)state
     if (state == GKPlayerStateDisconnected)
     {
         [self.delegate multiplayFailedConnect];
+    }
+    else if (state == GKPlayerStateConnected)
+    {
+        [self updateOtherPlayerLabelWithPlayerIDs: @[playerID]];
     }
 }
 

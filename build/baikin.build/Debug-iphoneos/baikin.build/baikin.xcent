@@ -3,12 +3,12 @@
 <plist version="1.0">
 <dict>
 	<key>application-identifier</key>
-	<string>GRK9HVJ7W6.com.yourcompany.baikin</string>
+	<string>GRK9HVJ7W6.jp.gkpro.ilikeflies</string>
 	<key>get-task-allow</key>
 	<true/>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>GRK9HVJ7W6.com.yourcompany.baikin</string>
+		<string>GRK9HVJ7W6.jp.gkpro.ilikeflies</string>
 	</array>
 </dict>
 </plist>
