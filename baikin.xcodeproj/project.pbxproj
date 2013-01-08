@@ -138,8 +138,9 @@
 		10AC4406167DDBD7004F55B5 /* TileFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AC4405167DDBD7004F55B5 /* TileFunctions.m */; };
 		10AC440A167DE4A0004F55B5 /* baikinred-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AC4408167DE4A0004F55B5 /* baikinred-hd.png */; };
 		10AC440B167DE4A0004F55B5 /* baikinred.png in Resources */ = {isa = PBXBuildFile; fileRef = 10AC4409167DE4A0004F55B5 /* baikinred.png */; };
-		10CECA5B16980053000C7130 /* MultiplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 10CECA5A16980053000C7130 /* MultiplayManager.m */; };
 		312E4D96167C30C300748323 /* CharLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 312E4D95167C30C300748323 /* CharLayer.m */; };
+		31514F00169BD9F800CF642A /* MultiplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 31514EFF169BD9F800CF642A /* MultiplayManager.m */; };
+		31514F03169BDA1800CF642A /* MultiplayDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 31514F02169BDA1800CF642A /* MultiplayDataObject.m */; };
 		315A0DB516896047007145AE /* MainRootLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 315A0DB416896047007145AE /* MainRootLayer.m */; };
 		318D1DBB1676EDA300AAA148 /* TouchInterfaceLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */; };
 		318D1DBD1676EFDE00AAA148 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318D1DBC1676EFDE00AAA148 /* Default-568h@2x.png */; };
@@ -420,10 +421,12 @@
 		10AC4405167DDBD7004F55B5 /* TileFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TileFunctions.m; sourceTree = "<group>"; };
 		10AC4408167DE4A0004F55B5 /* baikinred-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baikinred-hd.png"; sourceTree = "<group>"; };
 		10AC4409167DE4A0004F55B5 /* baikinred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baikinred.png; sourceTree = "<group>"; };
-		10CECA5916980053000C7130 /* MultiplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayManager.h; sourceTree = "<group>"; };
-		10CECA5A16980053000C7130 /* MultiplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayManager.m; sourceTree = "<group>"; };
 		312E4D94167C30C300748323 /* CharLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharLayer.h; sourceTree = "<group>"; };
 		312E4D95167C30C300748323 /* CharLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharLayer.m; sourceTree = "<group>"; };
+		31514EFE169BD9F800CF642A /* MultiplayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayManager.h; sourceTree = "<group>"; };
+		31514EFF169BD9F800CF642A /* MultiplayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayManager.m; sourceTree = "<group>"; };
+		31514F01169BDA1800CF642A /* MultiplayDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplayDataObject.h; sourceTree = "<group>"; };
+		31514F02169BDA1800CF642A /* MultiplayDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplayDataObject.m; sourceTree = "<group>"; };
 		315A0DB316896047007145AE /* MainRootLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRootLayer.h; sourceTree = "<group>"; };
 		315A0DB416896047007145AE /* MainRootLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRootLayer.m; sourceTree = "<group>"; };
 		318D1DB91676EDA300AAA148 /* TouchInterfaceLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchInterfaceLayer.h; sourceTree = "<group>"; };
@@ -924,14 +927,24 @@
 		1075187416762C810065B49F /* Etc */ = {
 			isa = PBXGroup;
 			children = (
-				10CECA5916980053000C7130 /* MultiplayManager.h */,
-				10CECA5A16980053000C7130 /* MultiplayManager.m */,
+				31514EFD169BD9F800CF642A /* Multiplay */,
 				10AC4404167DDBD7004F55B5 /* TileFunctions.h */,
 				10AC4405167DDBD7004F55B5 /* TileFunctions.m */,
 				318D1DB91676EDA300AAA148 /* TouchInterfaceLayer.h */,
 				318D1DBA1676EDA300AAA148 /* TouchInterfaceLayer.m */,
 			);
 			path = Etc;
+			sourceTree = "<group>";
+		};
+		31514EFD169BD9F800CF642A /* Multiplay */ = {
+			isa = PBXGroup;
+			children = (
+				31514EFE169BD9F800CF642A /* MultiplayManager.h */,
+				31514EFF169BD9F800CF642A /* MultiplayManager.m */,
+				31514F01169BDA1800CF642A /* MultiplayDataObject.h */,
+				31514F02169BDA1800CF642A /* MultiplayDataObject.m */,
+			);
+			path = Multiplay;
 			sourceTree = "<group>";
 		};
 		31D786BA167AE912003ECA1D /* Character */ = {
@@ -1154,8 +1167,9 @@
 				10AC4406167DDBD7004F55B5 /* TileFunctions.m in Sources */,
 				31EEDA691682CD8000F2ABB8 /* MenuLayer.m in Sources */,
 				315A0DB516896047007145AE /* MainRootLayer.m in Sources */,
-				10CECA5B16980053000C7130 /* MultiplayManager.m in Sources */,
 				1006683F16998E4900931230 /* MultiplayGameMenu.m in Sources */,
+				31514F00169BD9F800CF642A /* MultiplayManager.m in Sources */,
+				31514F03169BDA1800CF642A /* MultiplayDataObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
