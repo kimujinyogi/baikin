@@ -16,6 +16,9 @@
 // プレイヤーの配列を渡して、画面を更新する処理
 - (void) updateOtherPlayerLabelWithPlayerIDs: (NSArray*)array;
 
+// 先攻を決めるメソッド
+- (BOOL) seekBatFirst;
+
 @end
 
 @implementation MultiplayManager
@@ -124,10 +127,26 @@ static MultiplayManager* _instance;
          {
              [self setOtherPlayer: [players lastObject]];
              [self.delegate multiplayDidDownloadOtherPlayer: self.otherPlayer];
+             UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: [NSString stringWithFormat: @"俺は先攻%@", [self seekBatFirst] == YES ? @"だ" : @"ではない"]
+                                                              message: @""
+                                                             delegate: nil
+                                                    cancelButtonTitle: @"ok"
+                                                    otherButtonTitles: nil] autorelease];
+             [alert show];
          }
      }];
 }
 
+- (BOOL) seekBatFirst
+{
+    NSString* myID = [[GKLocalPlayer localPlayer] playerID];
+    NSString* enemyID = [[self otherPlayer] playerID];
+    
+    NSString* lastMyID = [myID substringFromIndex: 1];
+    NSString* lastEnemyID = [myID substringFromIndex: 1];
+    NSLog(@"%@, %@", myID, enemyID);
+    return [myID compare: enemyID] == NSOrderedAscending ? YES : NO;
+}
 
 
 #pragma mark - Match Delegate
