@@ -16,6 +16,9 @@
 
 - (BOOL) touchedIndex: (int)index;
 
+- (void) setPlayerBlue: (BOOL)isBlue;
+- (void) set2Player;
+
 @end
 
 

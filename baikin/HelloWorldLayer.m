@@ -69,7 +69,7 @@ static HelloWorldLayer* _instance = nil;
 {
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super's" return value
-	if( (self=[super init]) )
+	if((self = [super init]))
     {
         if (_instance != nil)
         {
@@ -128,6 +128,11 @@ static HelloWorldLayer* _instance = nil;
     _instance = nil;
     
 	[super dealloc];
+}
+
+- (void) setPlayerBlue: (BOOL)blueFlag
+{
+    
 }
 
 @end

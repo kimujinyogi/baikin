@@ -13,6 +13,8 @@
 
 @property (nonatomic, retain) CCLabelTTF* localPlayerLabel;
 @property (nonatomic, retain) CCLabelTTF* otherPlayerLabel;
+@property (nonatomic, retain) CCLabelTTF* firstTurnPlayerLabel;
+@property (nonatomic, retain) CCLabelTTF* countLabel;
 
 
 @end
@@ -64,6 +66,24 @@
         [[self localPlayerLabel] setString: localName];
         
         
+        [self setFirstTurnPlayerLabel: [CCLabelTTF labelWithString: @"先攻を決定中"
+                                                          fontName: @"Helvetica-Bold"
+                                                          fontSize: 20]];
+        [self addChild: self.firstTurnPlayerLabel
+                     z: 10];
+        self.firstTurnPlayerLabel.position = ccp(size.width * 0.5f, 100);
+        [self.firstTurnPlayerLabel setColor: ccc3(180, 180, 180)];
+        [self.firstTurnPlayerLabel setDimensions: CGSizeMake(300, 100)];
+        
+        [self setCountLabel: [CCLabelTTF labelWithString: @"3"
+                                                fontName: @"Helvetica-Bold"
+                                                fontSize: 32]];
+        [self addChild: self.countLabel
+                     z: 10];
+        self.countLabel.position = ccp(size.width * 0.5f, size.height * 0.5f);
+        [self.countLabel setColor: ccc3(180, 180, 180)];
+        [self.countLabel setDimensions: CGSizeMake(140, 140)];
+        
         // 準備ボタン
 //        CGSize size = [[CCDirector sharedDirector] winSize];
         // メニュー
@@ -94,6 +114,10 @@
 
 - (void) dealloc
 {
+    [self setLocalPlayerLabel: nil];
+    [self setOtherPlayerLabel: nil];
+    [self setFirstTurnPlayerLabel: nil];
+    [self setCountLabel: nil];
     [super dealloc];
 }
 
