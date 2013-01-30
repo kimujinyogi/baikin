@@ -16,6 +16,10 @@
 @property (nonatomic, retain) CCLabelTTF* firstTurnPlayerLabel;
 @property (nonatomic, retain) CCLabelTTF* countLabel;
 
+// @brief ゲーム開始のカウントダウンを始める
+// Author JinHyuck Kim
+- (void) countDownCountLabel;
+
 
 @end
 
