@@ -33,6 +33,7 @@
     int redCount_;
     BOOL isMyCharacterBlue_;            // 自分が先攻（blue）ならYES
     BOOL is2Player_;                    // １つのデバイスで２人でやる時はYES
+    BOOL isVsAI_;                       // パソコンと対決
 }
 
 @property (nonatomic, retain) NSArray* baikinList;
@@ -89,6 +90,10 @@
 {
     if ((self = [super init]))
     {
+        // 最初はタッチが出来ない
+        MenuLayer* menu = [HelloWorldLayer shareInstance].menuLayer;
+        [menu setTouchInterceptionOn: YES];
+        
         isBlueTurn_ = YES;
         // キャラクターは最大数を先に生成して置く。
         CharBase* chara = nil;
@@ -184,6 +189,17 @@
 
 - (BOOL) touchedIndex: (int)index
 {
+    // マルチプレイ中なら
+    if ((is2Player_ == NO) &&
+        (isVsAI_ == NO))
+    {
+        // 自分のターンじゃない場合は処理しない
+        if (isBlueTurn_ != isMyCharacterBlue_)
+        {
+            return NO;
+        }
+    }
+    
     BOOL returnValue = NO;
     
     // 既に選択されている物がある
@@ -277,11 +293,17 @@
 - (void) setPlayerBlue: (BOOL)isBlue
 {
     isMyCharacterBlue_ = isBlue;
+    [self showWhosTurn];
 }
 
 - (void) set2Player
 {
     is2Player_ = YES;
+}
+
+- (void) setVSAI
+{
+    isVsAI_ = YES;
 }
 
 
@@ -624,7 +646,12 @@
 - (void) showWhosTurn
 {
     HelloWorldLayer* hello = [HelloWorldLayer shareInstance];
-    [hello.menuLayer setTurnWithIsBlue: isBlueTurn_];
+    [hello.menuLayer setTurnWithIsBlue: isBlueTurn_
+                          IsMyCharBlue: isMyCharacterBlue_];
+
+    // 自分のターンの時のみタッチを有効にする
+    MenuLayer* menu = [HelloWorldLayer shareInstance].menuLayer;
+    [menu setTouchInterceptionOn: (isBlueTurn_ == isMyCharacterBlue_) ? NO : YES];
 }
 
 // 現在のblue,redカウントを表示

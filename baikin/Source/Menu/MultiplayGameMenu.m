@@ -7,9 +7,18 @@
 //
 
 
+#import "CharLayer.h"
+#import "HelloWorldLayer.h"
+
 #import "MultiplayGameMenu.h"
 
 @interface MultiplayGameMenu ()
+{
+@private
+    // 開始を知らせるカウントダウンの物
+    int startCount_;
+    BOOL isFirstMyTurn_;
+}
 
 @property (nonatomic, retain) CCLabelTTF* localPlayerLabel;
 @property (nonatomic, retain) CCLabelTTF* otherPlayerLabel;
@@ -18,7 +27,11 @@
 
 // @brief ゲーム開始のカウントダウンを始める
 // Author JinHyuck Kim
-- (void) countDownCountLabel;
+- (void) countDownStart;
+
+// @brief 先攻ユーザーを表示する
+// Author JinHyuck Kim
+- (void) setFirstStartPlayerLabel;
 
 
 @end
@@ -45,6 +58,8 @@
 {
     if ((self = [super init]))
     {
+        startCount_ = -1;
+        
         [[MultiplayManager shareInstance] setDelegate: self];
         
         CGSize size = [[CCDirector sharedDirector] winSize];
@@ -147,48 +162,31 @@
     
     if ([[MultiplayManager shareInstance] seekBatFirst] == YES)
     {
-        BOOL myTurnFirst = ((rand() % 2) == 1) ? YES : NO;
+        isFirstMyTurn_ = ((rand() % 2) == 1) ? YES : NO;
         
-        if (myTurnFirst == YES)
+        if (isFirstMyTurn_ == YES)
         {
-            UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"俺が先攻"
-                                                             message: @""
-                                                            delegate: nil
-                                                   cancelButtonTitle: @"ok"
-                                                   otherButtonTitles: nil] autorelease];
-            [alert show];
             MultiplayManager* manager = [MultiplayManager shareInstance];
             [manager sendFirstTurn: [[manager getLocalPlayer] playerID]];
         }
         else
         {
-            UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"相手が先攻"
-                                                             message: @""
-                                                            delegate: nil
-                                                   cancelButtonTitle: @"ok"
-                                                   otherButtonTitles: nil] autorelease];
-            [alert show];
             MultiplayManager* manager = [MultiplayManager shareInstance];
             [manager sendFirstTurn: [[manager getOtherPlayer] playerID]];
         }
+        
+        [self setFirstStartPlayerLabel];
+        [self countDownStart];
     }
 }
 
 // 先攻を決めるプレイヤーから、先攻者のIDが送られた
 - (void) multiplayDidSeekFirstTurn: (NSString*)playerID
 {
-    NSString* title = @"myTurn";
-    if ([[[[MultiplayManager shareInstance] getLocalPlayer] playerID] isEqualToString: playerID] == NO)
-    {
-        title = @"other turn";
-    }
+    isFirstMyTurn_ = [[[[MultiplayManager shareInstance] getLocalPlayer] playerID] isEqualToString: playerID];
     
-    UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: title
-                                                     message: @""
-                                                    delegate: nil
-                                           cancelButtonTitle: @"ok"
-                                           otherButtonTitles: nil] autorelease];
-    [alert show];
+    [self setFirstStartPlayerLabel];
+    [self countDownStart];
 }
 
 // 相手と接続が切れた
@@ -197,7 +195,50 @@
     
 }
 
+- (void) countDownProc
+{
+    startCount_--;
+    if (startCount_ < 0)
+    {
+        // ゲーム開始
+        [[CCDirector sharedDirector] replaceScene: [HelloWorldLayer scene]];
+        [[[HelloWorldLayer shareInstance] charaLayer] setPlayerBlue: isFirstMyTurn_];
+    }
+    else
+    {
+        [[self countLabel] setString: [NSString stringWithFormat: @"%d", startCount_]];
+    }
+}
 
+// @brief ゲーム開始のカウントダウンを始める
+// Author JinHyuck Kim
+- (void) countDownStart
+{
+    if (startCount_ < 0)
+    {
+        startCount_ = 3;
+        [self schedule: @selector(countDownProc)
+              interval: 1
+                repeat: 3
+                 delay: 5];
+    }
+}
+
+
+// @brief 先攻ユーザーを表示する
+// Author JinHyuck Kim
+- (void) setFirstStartPlayerLabel
+{
+    NSString* str = @"先攻 : ";
+    NSString* name = @"";
+    MultiplayManager* manager = [MultiplayManager shareInstance];
+    if (isFirstMyTurn_ == YES)
+        name = [[manager getLocalPlayer] displayName];
+    else
+        name = [[manager getOtherPlayer] displayName];
+    
+    [[self firstTurnPlayerLabel] setString: [NSString stringWithFormat: @"%@%@", str, name]];
+}
 
 @end
 

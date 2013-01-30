@@ -6,6 +6,7 @@
 //
 //
 
+#import "MultiplayManager.h"
 #import "MainRootLayer.h"
 
 #import "MenuLayer.h"
@@ -120,8 +121,15 @@
 
 // ターンをセット
 - (void) setTurnWithIsBlue: (BOOL)isBlue
+              IsMyCharBlue: (BOOL)myCharBlue
 {
-    [[self turnLabel] setString: (isBlue == YES) ? @"Blue\nTurn" : @"Red\nTurn"];
+    NSString* str = nil;
+    if (isBlue == myCharBlue)
+        str = @"自分のターン";
+    else
+        str = @"相手のターン";
+    
+    [[self turnLabel] setString: str];
     if (isBlue)
         [[self turnLabel] setColor: ccc3(100, 100, 255)];
     else

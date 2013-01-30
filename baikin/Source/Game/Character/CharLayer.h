@@ -18,6 +18,7 @@
 
 - (void) setPlayerBlue: (BOOL)isBlue;
 - (void) set2Player;
+- (void) setVSAI;
 
 @end
 

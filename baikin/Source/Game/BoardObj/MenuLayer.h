@@ -11,7 +11,8 @@
 @interface MenuLayer : CCLayer
 
 // ターンをセット
-- (void) setTurnWithIsBlue: (BOOL)isBlue;
+- (void) setTurnWithIsBlue: (BOOL)isBlue
+              IsMyCharBlue: (BOOL)myCharBlue;
 
 // 何個を持っているかをセット
 - (void) setBlueCount: (int)count;

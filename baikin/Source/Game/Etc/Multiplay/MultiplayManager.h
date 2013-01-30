@@ -20,12 +20,9 @@
 // 相手と接続が切れた
 - (void) multiplayFailedConnect;
 
-<<<<<<< HEAD
 // 先攻を決めるプレイヤーから、先攻者のIDが送られた
 - (void) multiplayDidSeekFirstTurn: (NSString*)playerID;
-=======
-//- (void) 
->>>>>>> a
+
 
 @end
 
