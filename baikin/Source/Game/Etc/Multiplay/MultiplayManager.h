@@ -20,6 +20,8 @@
 // 相手と接続が切れた
 - (void) multiplayFailedConnect;
 
+//- (void) 
+
 @end
 
 @interface MultiplayManager : NSObject <GKMatchDelegate>

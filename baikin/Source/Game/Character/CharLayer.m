@@ -31,6 +31,8 @@
     BOOL isBlueTurn_;
     int blueCount_;
     int redCount_;
+    BOOL isMyCharacterBlue_;            // 自分が先攻（blue）ならYES
+    BOOL is2Player_;                    // １つのデバイスで２人でやる時はYES
 }
 
 @property (nonatomic, retain) NSArray* baikinList;
@@ -80,6 +82,9 @@
 @implementation CharLayer
 
 
+
+#pragma mark - init / dealloc
+
 - (id) init
 {
     if ((self = [super init]))
@@ -114,6 +119,10 @@
     
     [super dealloc];
 }
+
+
+
+#pragma mark - Instance method
 
 - (void) setStartCharaSetRedPositions: (CGPoint*)redP
                         BluePositions: (CGPoint*)blueP
@@ -264,6 +273,19 @@
     
     return returnValue;
 }
+
+- (void) setPlayerBlue: (BOOL)isBlue
+{
+    isMyCharacterBlue_ = isBlue;
+}
+
+- (void) set2Player
+{
+    is2Player_ = YES;
+}
+
+
+#pragma mark - 
 
 
 // 選択中のキャラを待機状態にする
