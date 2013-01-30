@@ -1,6 +1,6 @@
 dependencies: \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m \
-  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.h \
+  /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/AppDelegate.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/cocos2d.h \
   /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/ccConfig.h \

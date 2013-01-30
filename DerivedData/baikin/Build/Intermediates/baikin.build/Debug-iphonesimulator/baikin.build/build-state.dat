@@ -5,11 +5,11 @@ cCheck dependencies
 cProcessInfoPlistFile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/Info.plist baikin/Resources/Info.plist
 cProcessPCH /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch.pth baikin/Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cProcessPCH /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-doryvgklncqlgdhfwhedoqrouozr/Prefix.pch.pth baikin/Prefix.pch normal i386 c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionEase.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionEase.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionGrid.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionGrid.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionCamera.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionCamera.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCAction.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCAction.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionCatmullRom.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionCatmullRom.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionCamera.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionCamera.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionEase.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionEase.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionGrid.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionGrid.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionGrid3D.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionGrid3D.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionInstant.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionInstant.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/CCActionInterval.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/cocos2d/CCActionInterval.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -116,8 +116,9 @@ cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimula
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/TileFunctions.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/TileFunctions.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cLd /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin normal i386
 cGenerateDSYMFile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin
 cCpResource baikin/Resources/Default.png DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/Default.png
@@ -523,20 +524,24 @@ t1357368952
 s23248
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o
-t1357470818
-s108600
+t1358868894
+s109668
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.o
 t1357368953
 s114860
 
+N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o
+t1358868233
+s10748
+
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o
-t1357471325
-s32580
+t1358868903
+s107888
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o
-t1357470830
-s26588
+t1358868903
+s29952
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/NSThread+performBlock.o
 t1357366108
@@ -571,9 +576,9 @@ t1357366090
 s4028
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/baikin.LinkFileList
-c0000000050E959BA0000000000004A3D
-t1357470138
-s19005
+c0000000050FEABBE0000000000004AEC
+t1358867390
+s19180
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/base64.o
 t1357366090
@@ -656,11 +661,11 @@ t1357366109
 s10104
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app
-t1357471325
+t1358868905
 s782
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM
-t1357471325
+t1358868905
 s102
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/ChangeLog
@@ -712,8 +717,8 @@ t1357366089
 s8
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin
-t1357471325
-s1829136
+t1358868904
+s1836984
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin-hd.png
 t1357366113
@@ -907,15 +912,35 @@ c0000000050E10FCF000000000000480D
 t1356926927
 s18445
 
+N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.h
+c0000000050FEAEFC00000000000002CB
+t1358868220
+s715
+
+N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m
+c0000000050FEAF080000000000000303
+t1358868232
+s771
+
+N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.h
+c0000000050FEB10A00000000000004BD
+t1358868746
+s1213
+
+N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m
+c0000000050FEB36600000000000015D3
+t1358869350
+s5587
+
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.h
-c0000000050E9561F0000000000000361
-t1357469215
-s865
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.m
-c0000000050E95C6D0000000000000F2D
-t1357470829
-s3885
+c00000000000000000000000000000000
+t2
+s0
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/TileFunctions.h
 c0000000050D09A54000000000000027A
@@ -943,9 +968,9 @@ t1357368024
 s392
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m
-c0000000050E95C6100000000000014C7
-t1357470817
-s5319
+c0000000050EADE4800000000000014CB
+t1357569608
+s5323
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.h
 c0000000050E95B6F0000000000000101
@@ -953,9 +978,9 @@ t1357470575
 s257
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m
-c0000000050E95E9F0000000000000A3C
-t1357471391
-s2620
+c0000000050FEB2D4000000000000169D
+t1358869204
+s5789
 
 N/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/CocosDenshion/CDAudioManager.h
 c0000000050CC6C170000000000002510
@@ -2108,6 +2133,12 @@ r0
 CBuild AST from /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Character/CharLayer.m
 r0
 
+CBuild AST from /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m
+r0
+
+CBuild AST from /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m
+r0
+
 CBuild AST from /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.m
 r0
 
@@ -2428,7 +2459,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies414a941f9699b641^efe1961f9699b641^---0#1#0#--18"Check dependencies36"69E12C77-B76B-42B8-B0DF-E4C3D3229105-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciescdc8cc24ebaeb641^31253227ebaeb641^---0#1#0#--18"Check dependencies36"12B51B20-0215-451F-A4BA-A19E8F18AA04-
 
 CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/AppDelegate.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s379058909.821616
@@ -3484,8 +3515,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection73"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/IntroLayer.m016bc9f80598b641^d1adfbf80598b641^---0#0#0#-19%DVTDocumentLocation2@81"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/IntroLayer.m0000000000000000^3697"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/IntroLayer.o baikin/IntroLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/IntroLayer.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/IntroLayer.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/IntroLayer.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/IntroLayer.o36"EE0768F2-A28B-4AF9-B23C-57BF57A3FFFA-
 
 CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s379163617.798946
-e379163618.348900
+s380561693.603024
+e380561694.530943
 r1
 xCompileC
 xDerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o
@@ -3494,7 +3525,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m1aa7cde19399b641^d25259e29399b641^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m0000000000000000^3739"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o baikin/Source/Menu/MainRootLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o36"ACB36A21-F36A-42A7-891A-BCAA9F165B9E-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.mc3b99a1de9aeb641^c4af881ee9aeb641^---0#0#0#-19%DVTDocumentLocation2@96"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m0000000000000000^3739"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o baikin/Source/Menu/MainRootLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MainRootLayer.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MainRootLayer.o36"52D45E99-436A-48F9-BC51-3CE9E31DBB55-
 
 CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s379061752.793992
@@ -3509,9 +3540,22 @@ xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection93"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.m9869cbf80598b641^d3bf18f90598b641^---0#0#0#-19%DVTDocumentLocation2@101"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.m0000000000000000^3733"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.o baikin/Source/Game/BoardObj/MenuLayer.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/BoardObj/MenuLayer.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MenuLayer.o36"1679ED87-0FB1-4171-979A-BA90D875DA98-
 
+CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s380561032.859218
+e380561033.175308
+r1
+xCompileC
+xDerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o
+x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.md219dc88e6aeb641^87e02c89e6aeb641^---0#0#0#-19%DVTDocumentLocation2@116"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m0000000000000000^3803"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayDataObject.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayDataObject.o36"FD9D39D9-4E0E-4CFD-A354-05CE39B4E415-
+
 CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s379164191.751858
-e379164192.352429
+s380562215.454710
+e380562216.652772
 r1
 xCompileC
 xDerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o
@@ -3520,7 +3564,20 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m519fc01f9699b641^ed665a209699b641^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m0000000000000000^3763"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o baikin/Source/Menu/MultiplayGameMenu.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o36"EC5C57AA-FBCE-4E18-BC83-450B87D2662E-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.me7c67427ebaeb641^c497b128ebaeb641^---0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m0000000000000000^3763"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o baikin/Source/Menu/MultiplayGameMenu.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Menu/MultiplayGameMenu.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayGameMenu.o36"8C01CE1D-C077-4526-97AB-72154CEC9350-
+
+CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s380562215.456484
+e380562216.173917
+r1
+xCompileC
+xDerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o
+x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m61537727ebaeb641^90852c28ebaeb641^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m0000000000000000^3785"CompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o baikin/Source/Game/Etc/Multiplay/MultiplayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv LANG en_US.US-ASCII    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -std=gnu99 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-implicit-atomic-properties -Wno-receiver-is-weak -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wpointer-sign -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -DDEBUG -DCOCOS2D_DEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -fexceptions -fasm-blocks -Wprotocol -Wdeprecated-declarations -g -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -mios-simulator-version-min=4.0 -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-generated-files.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-own-target-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-all-target-headers.hmap -iquote /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/baikin-project-headers.hmap -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/include -Ibaikin/libs/kazmath/include -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources/i386 -I/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/DerivedSources -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -include /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/PrecompiledHeaders/Prefix-bngeinhrkwnappbnnxpfelclcybd/Prefix.pch -MMD -MT dependencies -MF /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.d --serialize-diagnostics /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.dia -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/Multiplay/MultiplayManager.m -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o36"5B96F125-1F6F-4EDD-AAD3-109E669E7167-
 
 CCompileC DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/MultiplayManager.o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/Source/Game/Etc/MultiplayManager.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s379163629.993195
@@ -4062,23 +4119,23 @@ xDerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/ChangeLog
 lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection81"Copy DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/ChangeLog64b185e1fa97b641^41f286e1fa97b641^---0#0#0#-19%DVTDocumentLocation2@138"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/ChangeLog000000000080d041^675"CpResource baikin/libs/kazmath/src/ChangeLog DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/ChangeLog    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/kimujinyogi02/Desktop/My/Baikin/baikin/baikin/libs/kazmath/src/ChangeLog /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app36"20F9EF8F-BA37-42C4-A128-CE76B121EA63-
 
 CGenerateDSYMFile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin
-s379164192.763816
-e379164193.000729
+s380562217.571721
+e380562218.454012
 r1
 xGenerateDSYMFile
 x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM
 x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection128"Generating /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM33a3c3209699b641^d72f00219699b641^---0#0#0#-19%DVTDocumentLocation2@134"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM/0000000000000000^752"GenerateDSYMFile DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM36"0634567C-1A2A-4816-B581-ACB6831C9835-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection128"Generating /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM6b9b9229ebaeb641^0ddf762aebaeb641^---0#0#0#-19%DVTDocumentLocation2@134"file://localhost/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM/0000000000000000^752"GenerateDSYMFile DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app.dSYM36"EC2B1E41-8A8D-4EE8-B771-BCD204C5738B-
 
 CLd /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin normal i386
-s379164192.359778
-e379164192.756908
+s380562216.725552
+e380562217.555629
 r1
 xLd
 x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin
 xnormal
 xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin7a355c209699b641^cdcbc1209699b641^---0#0#0#--1446"Ld DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin normal i386    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -L/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -filelist /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/baikin.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lz -ObjC -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=4.0 -framework QuartzCore -framework OpenGLES -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework UIKit -framework Foundation -framework CoreGraphics -framework GameKit -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin36"0E0B955F-73F2-4FCC-99A4-D64AEEAD988D-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection124"Link /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin43e7bd28ebaeb641^b8408e29ebaeb641^---0#0#0#--1446"Ld DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin normal i386    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv IPHONEOS_DEPLOYMENT_TARGET 4.0    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk -L/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -F/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator -filelist /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Intermediates/baikin.build/Debug-iphonesimulator/baikin.build/Objects-normal/i386/baikin.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -lz -ObjC -fobjc-link-runtime -Xlinker -no_implicit_dylibs -mios-simulator-version-min=4.0 -framework QuartzCore -framework OpenGLES -framework OpenAL -framework AudioToolbox -framework AVFoundation -framework UIKit -framework Foundation -framework CoreGraphics -framework GameKit -o /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/baikin36"91C2008D-C04E-4338-BECB-D867F66C584F-
 
 CProcessInfoPlistFile /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app/Info.plist baikin/Resources/Info.plist
 s379058889.076261
@@ -4122,10 +4179,10 @@ CProcessPCH /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Ind
 r0
 
 CTouch /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app
-s379164193.028230
-e379164193.038104
+s380562218.504636
+e380562218.533001
 r1
 xTouch
 x/Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Touch /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.appcf4d07219699b641^1ac209219699b641^---0#0#0#--456"Touch DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app36"F317DA4F-9FBF-4B88-8A85-851C510BA03E-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Touch /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app895f812aebaeb641^4773882aebaeb641^---0#0#0#--456"Touch DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app    cd /Users/kimujinyogi02/Desktop/My/Baikin/baikin    setenv PATH "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/kimujinyogi02/Desktop/My/Baikin/baikin/DerivedData/baikin/Build/Products/Debug-iphonesimulator/baikin.app36"E7BEA16D-341A-4510-8878-96BC7CFC8940-
 

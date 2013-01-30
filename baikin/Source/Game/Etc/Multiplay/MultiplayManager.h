@@ -20,6 +20,9 @@
 // 相手と接続が切れた
 - (void) multiplayFailedConnect;
 
+// 先攻を決めるプレイヤーから、先攻者のIDが送られた
+- (void) multiplayDidSeekFirstTurn: (NSString*)playerID;
+
 @end
 
 @interface MultiplayManager : NSObject <GKMatchDelegate>
@@ -33,8 +36,14 @@
 - (GKPlayer*) getLocalPlayer;
 - (GKPlayer*) getOtherPlayer;
 
+// プレイヤーのidを比較して、自分の文字列が先ならYES
+- (BOOL) seekBatFirst;
+
 // 相手にタッチしたポイント(X,Y何番目)を送信するメソッド
 - (void) sendTouchPoint: (CGPoint)point;
+
+// 相手に誰が先攻が決まった後に知らせるメソッド
+- (void) sendFirstTurn: (NSString*)playerID;
 
 @end
 

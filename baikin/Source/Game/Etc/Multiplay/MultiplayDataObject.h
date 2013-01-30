@@ -12,14 +12,22 @@ enum kMultiType
 {
     kMultiType_EntryLoading,    // 待機画面ロード中
     kMultiType_Entry,           // 待機画面
+    kMultiType_SeekFirstTurn,   // ターンを決める所
     kMultiType_EntryReady,      // 待機画面で準備完了
     kMultiType_GameLoading,     // ゲームロード中
 };
 
 @interface MultiplayDataObject : NSObject
 {
-    
+@private
 }
+
+// 状態
+@property (nonatomic, assign) enum kMultiType type;
+
+// 簡単な情報を送信する時に使う文字列
+// 先攻を知らせる時
+@property (nonatomic, retain) NSString* sendStr;
 
 @end
 

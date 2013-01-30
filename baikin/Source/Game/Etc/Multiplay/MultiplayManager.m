@@ -6,6 +6,8 @@
 //
 //
 
+#import "MultiplayDataObject.h"
+
 #import "MultiplayManager.h"
 
 @interface MultiplayManager ()
@@ -15,9 +17,6 @@
 
 // プレイヤーの配列を渡して、画面を更新する処理
 - (void) updateOtherPlayerLabelWithPlayerIDs: (NSArray*)array;
-
-// 先攻を決めるメソッド
-- (BOOL) seekBatFirst;
 
 @end
 
@@ -87,6 +86,16 @@ static MultiplayManager* _instance;
     return self.otherPlayer;
 }
 
+// 先攻を決めるメソッド
+// これがYESの物が誰が先攻をするか決める処理を行う
+- (BOOL) seekBatFirst
+{
+    NSString* myID = [[GKLocalPlayer localPlayer] playerID];
+    NSString* enemyID = [[self otherPlayer] playerID];
+    
+    return [myID compare: enemyID] == NSOrderedAscending ? YES : NO;
+}
+
 
 #pragma mark - 通信
 
@@ -111,6 +120,27 @@ static MultiplayManager* _instance;
 }
 
 
+// 相手に誰が先攻が決まった後に知らせるメソッド
+- (void) sendFirstTurn: (NSString*)playerID
+{
+    NSError* error = nil;
+    
+    MultiplayDataObject* obj = [[[MultiplayDataObject alloc] init] autorelease];
+    [obj setType: kMultiType_SeekFirstTurn];
+    [obj setSendStr: playerID];
+    
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject: obj];
+    
+    [[self match] sendDataToAllPlayers: data
+                          withDataMode: GKMatchSendDataUnreliable
+                                 error: &error];
+    if (error != nil)
+        NSLog(@"%@", [error localizedDescription]);
+    else
+        NSLog(@"送信できた？かな。？");
+}
+
+
 #pragma mark - Private mathod
 // プレイヤーの配列を渡して、画面を更新する処理
 - (void) updateOtherPlayerLabelWithPlayerIDs: (NSArray*)array
@@ -127,25 +157,8 @@ static MultiplayManager* _instance;
          {
              [self setOtherPlayer: [players lastObject]];
              [self.delegate multiplayDidDownloadOtherPlayer: self.otherPlayer];
-             UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: [NSString stringWithFormat: @"俺は先攻%@", [self seekBatFirst] == YES ? @"だ" : @"ではない"]
-                                                              message: @""
-                                                             delegate: nil
-                                                    cancelButtonTitle: @"ok"
-                                                    otherButtonTitles: nil] autorelease];
-             [alert show];
          }
      }];
-}
-
-- (BOOL) seekBatFirst
-{
-    NSString* myID = [[GKLocalPlayer localPlayer] playerID];
-    NSString* enemyID = [[self otherPlayer] playerID];
-    
-    NSString* lastMyID = [myID substringFromIndex: 1];
-    NSString* lastEnemyID = [myID substringFromIndex: 1];
-    NSLog(@"%@, %@", myID, enemyID);
-    return [myID compare: enemyID] == NSOrderedAscending ? YES : NO;
 }
 
 
@@ -156,12 +169,20 @@ static MultiplayManager* _instance;
 didReceiveData: (NSData*)data
     fromPlayer: (NSString*)playerID
 {
-    NSString* str = [[NSString alloc] initWithBytes: [data bytes]
-                                             length: 3
-                                           encoding: NSUTF8StringEncoding];
-    NSLog(@"str = %@", str);
-    NSLog(@"%@", playerID);
-    // 相手からデータをもらったので、更新させる？
+    MultiplayDataObject* obj = [NSKeyedUnarchiver unarchiveObjectWithData: data];
+    
+    switch ([obj type])
+    {
+        case kMultiType_SeekFirstTurn:
+            if ([[self delegate] respondsToSelector: @selector(multiplayDidSeekFirstTurn: )] == YES)
+            {
+                [[self delegate] multiplayDidSeekFirstTurn: [obj sendStr]];
+            }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

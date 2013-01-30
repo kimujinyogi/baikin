@@ -22,6 +22,7 @@
 
 - (void) dealloc
 {
+    [self setSendStr: nil];
     [super dealloc];
 }
 
@@ -29,7 +30,8 @@
 {
 	if ((self = [super init]) != nil)
 	{
-        
+        [self setType: [aDecoder decodeIntForKey: @"type"]];
+        [self setSendStr: [aDecoder decodeObjectForKey: @"sendStr"]];
 	}
 	
 	return self;
@@ -37,7 +39,10 @@
 
 - (void) encodeWithCoder: (NSCoder*)aCoder
 {
-    
+    [aCoder encodeInt: [self type]
+               forKey: @"type"];
+    [aCoder encodeObject: [self sendStr]
+                  forKey: @"sendStr"];
 }
 
 @end

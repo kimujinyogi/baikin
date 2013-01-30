@@ -14,6 +14,7 @@
 @property (nonatomic, retain) CCLabelTTF* localPlayerLabel;
 @property (nonatomic, retain) CCLabelTTF* otherPlayerLabel;
 
+
 @end
 
 @implementation MultiplayGameMenu
@@ -98,6 +99,11 @@
 
 
 
+#pragma mark - Private method
+
+
+
+
 #pragma mark - MultiplayManager delegate
 
 // 自分の情報の取得が終了した
@@ -110,6 +116,51 @@
 - (void) multiplayDidDownloadOtherPlayer: (GKPlayer*)player
 {
     [[self otherPlayerLabel] setString: [player displayName]];
+    
+    if ([[MultiplayManager shareInstance] seekBatFirst] == YES)
+    {
+        BOOL myTurnFirst = ((rand() % 2) == 1) ? YES : NO;
+        
+        if (myTurnFirst == YES)
+        {
+            UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"俺が先攻"
+                                                             message: @""
+                                                            delegate: nil
+                                                   cancelButtonTitle: @"ok"
+                                                   otherButtonTitles: nil] autorelease];
+            [alert show];
+            MultiplayManager* manager = [MultiplayManager shareInstance];
+            [manager sendFirstTurn: [[manager getLocalPlayer] playerID]];
+        }
+        else
+        {
+            UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: @"相手が先攻"
+                                                             message: @""
+                                                            delegate: nil
+                                                   cancelButtonTitle: @"ok"
+                                                   otherButtonTitles: nil] autorelease];
+            [alert show];
+            MultiplayManager* manager = [MultiplayManager shareInstance];
+            [manager sendFirstTurn: [[manager getOtherPlayer] playerID]];
+        }
+    }
+}
+
+// 先攻を決めるプレイヤーから、先攻者のIDが送られた
+- (void) multiplayDidSeekFirstTurn: (NSString*)playerID
+{
+    NSString* title = @"myTurn";
+    if ([[[[MultiplayManager shareInstance] getLocalPlayer] playerID] isEqualToString: playerID] == NO)
+    {
+        title = @"other turn";
+    }
+    
+    UIAlertView* alert = [[[UIAlertView alloc] initWithTitle: title
+                                                     message: @""
+                                                    delegate: nil
+                                           cancelButtonTitle: @"ok"
+                                           otherButtonTitles: nil] autorelease];
+    [alert show];
 }
 
 // 相手と接続が切れた
@@ -117,6 +168,8 @@
 {
     
 }
+
+
 
 @end
 
